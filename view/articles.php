@@ -1,12 +1,29 @@
-<div class="article1Conteneur">
-    <div class="article1">
-        <h2>Article 1 ===> image</h2>
-        <div class="imageArticle1">
-            <img src="../media/sylvanas.png" />
+
+<section>
+    <?php
+
+    $stmt = $pdo->prepare("SELECT * FROM articles ORDER BY id DESC LIMIT 0, 10");
+    $stmt->execute();
+
+    while ($result = $stmt->fetch()) {
+
+    ?>
+    <div class="article1Conteneur">
+        <div class="article1">
+            <h2><?php echo $result['title']; ?> par <?php echo $result['author']; ?> le <?php echo date('d/m/Y à H\hi', $result['date']); ?> ===> image</h2>
+                <div class="imageArticle1">
+                <img src="" />
+            </div>
+            <p>
+                <?php echo $result['content']; ?>
+            </p>
         </div>
-        <h3>Titre Article 1</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
     </div>
-</div>
+        <hr>
+            <?php
+
+        }
+
+        ?>
+
+</section>
