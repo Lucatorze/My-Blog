@@ -28,6 +28,11 @@ else{
             include('view/viewArticles.php');
             break;
 
+        //Page Commantaires
+        case 'newComments':
+            include('view/newComments.php');
+            break;
+
         // Page Catégories
         case 'categories':
             include('view/categories.php');
