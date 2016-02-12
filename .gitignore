@@ -1,1 +1,4 @@
 model/dbconf.php
+.idea/.name
+*.xml
+.idea/strangeAnimals42.iml
