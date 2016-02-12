@@ -45,4 +45,30 @@ class articles{
         return $result;
     }
 
+    function getArticlesOrder($pdo){
+
+        $stmt = $pdo->prepare("SELECT * FROM articles ORDER BY id DESC LIMIT 0, 10");
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    function getArticlesId($pdo){
+
+        $stmt = $pdo->prepare("SELECT * FROM articles ORDER BY id");
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    function getArticlesCategories($pdo, $id){
+
+        $stmt = $pdo->prepare("SELECT * FROM articles WHERE idCat = :idCat");
+        $stmt->bindParam("idCat", $id);
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+
 }

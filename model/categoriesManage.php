@@ -44,4 +44,20 @@ class categories{
 
     }
 
+    function getCategoriesName($pdo){
+
+        $stmt = $pdo->prepare("SELECT * FROM categories ORDER BY name");
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    function getCategoriesId($pdo){
+
+        $stmt = $pdo->prepare("SELECT * FROM categories ORDER BY id");
+        $stmt->execute();
+
+        return $stmt;
+    }
+
 }

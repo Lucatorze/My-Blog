@@ -18,8 +18,10 @@ include('controller/articlesController.php');
         </tr>
         <?php
 
-        $stmt = $pdo->prepare("SELECT * FROM articles ORDER BY id");
-        $stmt->execute();
+        require_once('model/articlesManage.php');
+
+        $articles = new articles();
+        $stmt = $articles->getArticlesId($pdo);
 
         while ($result = $stmt->fetch())
         {

@@ -45,4 +45,11 @@ class comments{
         return $result;
     }
 
+    function getCommentsOrder($pdo){
+
+        $stmt2 = $pdo->prepare("SELECT * FROM comments WHERE idArticles = :idArticles ORDER BY date");
+        $stmt2->bindParam("idArticles", $_GET['id']);
+        $stmt2->execute();
+    }
+
 }

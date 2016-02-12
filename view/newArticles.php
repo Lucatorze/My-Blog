@@ -22,8 +22,10 @@ include('controller/articlesController.php');
 
             <?php
 
-            $stmt2 = $pdo->prepare("SELECT * FROM categories ORDER BY id");
-            $stmt2->execute();
+            require_once('model/categoriesManage.php');
+
+            $categories = new categories();
+            $stmt2 = $categories->getCategoriesId($pdo);
 
             while($result2 = $stmt2->fetch()){
 

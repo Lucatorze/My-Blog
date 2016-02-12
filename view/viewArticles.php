@@ -38,12 +38,11 @@ $result = $stmt->fetch();
     <div>
 
         <?php
-        include('controller/commentsController.php');
 
+        require_once('model/categoriesManage.php');
 
-        $stmt2 = $pdo->prepare("SELECT * FROM comments WHERE idArticles = :idArticles ORDER BY date");
-        $stmt2->bindParam("idArticles", $_GET['id']);
-        $stmt2->execute();
+        $comments = new comments();
+        $stmt2 = $comments->getCommentsOrder($pdo);
 
         while ($result2 = $stmt2->fetch()) {
 

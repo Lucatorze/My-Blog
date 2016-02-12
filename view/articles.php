@@ -2,15 +2,17 @@
 <section>
     <?php
 
-    $stmt = $pdo->prepare("SELECT * FROM articles ORDER BY id DESC LIMIT 0, 10");
-    $stmt->execute();
+    require_once('model/articlesManage.php');
+
+    $articles = new articles();
+    $stmt = $articles->getArticlesOrder($pdo);
 
     while ($result = $stmt->fetch()) {
 
     ?>
     <div class="article1Conteneur">
         <div class="article1">
-            <h2><?php echo $result['title']; ?> par <?php echo $result['author']; ?> le <?php echo date('d/m/Y à H\hi', $result['date']); ?> ===> image</h2>
+            <h2><?php echo '<a href="index.php?pages=viewArticles&&id=' . $result['id'] . '">' . $result['title'] . '</a>'; ?> par <?php echo $result['author']; ?> le <?php echo date('d/m/Y à H\hi', $result['date']); ?> ===> image</h2>
                 <div class="imageArticle1">
                 <img src="" />
             </div>

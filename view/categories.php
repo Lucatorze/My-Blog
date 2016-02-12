@@ -15,8 +15,10 @@
         </tr>
         <?php
 
-        $stmt = $pdo->prepare("SELECT * FROM categories ORDER BY name");
-        $stmt->execute();;
+        require_once('model/categoriesManage.php');
+
+        $categories = new categories();
+        $stmt = $categories->getCategoriesName($pdo);
 
         while ($result = $stmt->fetch()) {
 

@@ -9,9 +9,11 @@
         </tr>
         <?php
 
-        $stmt = $pdo->prepare("SELECT * FROM articles WHERE idCat = :idCat");
-        $stmt->bindParam("idCat", $_GET['id']);
-        $stmt->execute();
+        require_once('model/articlesManage.php');
+
+        $articles = new articles();
+        $id = $_GET['id'];
+        $stmt = $articles->getArticlesCategories($pdo, $id);
 
         while ($result = $stmt->fetch()) {
 
