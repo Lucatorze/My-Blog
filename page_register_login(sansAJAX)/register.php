@@ -27,11 +27,19 @@
             </div>
           </nav>
         </aside>
-        <form id="loginForm" name="loginForm" method="post" action="loginController.php"> <!--ajouter la page php à action-->
+        <form id="registerForm" name="registerForm" method="post" action="registerController.php"> <!--ajouter la page php à action-->
+        	 <label for"prenom">Prénom</label>
+        	 <input type="text" name="firstname" id="firstname" placeholder="Sylvain..."><br><br>
+        	 <label for"nom">Nom</label>
+        	 <input type="text" name="lastname" id="lastname" placeholder="Joly..."><br><br>
            <label for"email">Pseudo</label>
            <input type="text" name="nickname" id="nickname" placeholder="xX-Kikoo-xX"><br><br>
         	 <label for"pwd">Mot de passe</label>
         	 <input type="password" name="password" id="password"><br><br>
+        	 <label for"pwd2">Vérification du mot de passe</label>
+        	 <input type="password" name="password2" id="password2"><br><br>
+        	 <label for"email">Email</label>
+        	 <input type="email" name="email" id="email" placeholder="sylvain.joly123@gmail.com"><br><br>
         	 <input type="submit" name="btnSubmit" value="Envoyer" id="btnSubmit">
         </form>
     </main>
@@ -86,38 +94,6 @@
     $('#email').mouseout(function () {
       $(this).css({'background' : '#fff'});
     })
-    $(function () {
-               $('form').submit(function () {
-                   $('#blocErreur').html('');
-                   $.ajax({
-                       url: 'registerController.php',
-                       method: 'POST',
-                       data: $(this).serialize(),
-                       dataType: 'json',
-                       success: function(data){
-                           var toPrint = 'prenom : '+data.firstname+'<br>';
-                           toPrint += 'lastname : '+data.lastname+'<br>';
-                           toPrint += 'pseudo : '+data.nickname+'<br>';
-                           toPrint += 'pass : '+data.pwd+'<br>';
-                           for(var c in data.user.color){
-                               toPrint += 'color '+(parseInt(c)+1)+' :'+data.user.color[c]+'<br>';
-                           }
-                           $('#blocSuccess').html(toPrint);
-                       },
-                       error: function(data, status, error) {
-                           var toPrint = '';
-
-                           data = JSON.parse(data.responseText);
-                           for(var d in data.errors){
-                               toPrint += d+' :'+data.errors[d]+'<br>';
-                           }
-                           $('#blocErreur').html(toPrint);
-                       }
-                   });
-
-                   return false;
-               });
-           });
   });
 
     </script>
