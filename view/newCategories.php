@@ -1,9 +1,11 @@
 <?php require_once('controller/categoriesController.php'); ?>
 <section>
 
+    <div><?php echo $error;?></div>
+
     <form action="index.php?pages=listCategories" method="post">
 
-        <label for="title">Titre :</label>
+        <label for="name">Titre :</label>
         <input type="text" name="name" id="name" value="<?php echo $result['name']; ?>"><br>
         <br>
 
