@@ -16,6 +16,10 @@ if (isset($_POST['title']) AND isset($_POST['content'])){
 
     if ($_POST['idArticles'] == 0){ //Poster un nouvelle articles
 
+        $_POST['title'] = trim(htmlentities($_POST['title']));
+        $_POST['author'] = trim(htmlentities($_POST['author']));
+        $_POST['content'] = trim(htmlentities($_POST['content']));
+
         $articles->addArticles($pdo, $date);
 
         header("Location: index.php?pages=listArticles");
@@ -23,6 +27,10 @@ if (isset($_POST['title']) AND isset($_POST['content'])){
 
     }
     else{ //Poster une modification d'articles
+
+        $_POST['title'] = trim(htmlentities($_POST['title']));
+        $_POST['author'] = trim(htmlentities($_POST['author']));
+        $_POST['content'] = trim(htmlentities($_POST['content']));
 
         $articles->updateArticles($pdo, $date);
 

@@ -13,6 +13,9 @@ if (isset($_POST['author']) AND isset($_POST['content'])){
 
     if ($_POST['idComments'] == 0){
 
+        $_POST['author'] = trim(htmlentities($_POST['author']));
+        $_POST['content'] = trim(htmlentities($_POST['content']));
+
         $comments->addComments($pdo, $date);
 
         header("Location: index.php?pages=viewArticles&&id=" . $_POST['idArticles']);
@@ -20,6 +23,9 @@ if (isset($_POST['author']) AND isset($_POST['content'])){
 
     }
     else{
+
+        $_POST['author'] = trim(htmlentities($_POST['author']));
+        $_POST['content'] = trim(htmlentities($_POST['content']));
 
         $comments->updateComments($pdo, $date);
 

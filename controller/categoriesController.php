@@ -2,6 +2,8 @@
 
 require_once('model/categoriesManage.php');
 
+$error = '';
+
 $categories = new categories();
 
 $getCategoriesId = $categories->getCategoriesId($pdo);
@@ -12,12 +14,18 @@ if (isset($_POST['name']) AND isset($_POST['description'])) {
 
     if ($_POST['idCategories'] == 0) {
 
-        $categories->addCategories($pdo);
+            $_POST['name'] = trim(htmlentities($_POST['name']));
+            $_POST['description'] = trim(htmlentities($_POST['description']));
 
-        header("Location: index.php?pages=listCategories");
-        exit;
+            $categories->addCategories($pdo);
+
+            header("Location: index.php?pages=listCategories");
+            exit;
 
     } else {
+
+        $_POST['name'] = trim(htmlentities($_POST['name']));
+        $_POST['description'] = trim(htmlentities($_POST['description']));
 
         $categories->updateCategories($pdo);
 

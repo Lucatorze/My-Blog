@@ -51,6 +51,15 @@ else{
         case 'register':
             require_once('view/register.php');
             break;
+        case 'login':
+            require_once('view/login.php');
+            break;
+        case 'profile':
+            require_once('view/profile.php');
+            break;
+        case 'logout':
+            require_once('view/logout.php');
+            break;
     }
 }
 
