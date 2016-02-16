@@ -49,7 +49,13 @@ class categories{
         $stmt = $pdo->prepare("SELECT * FROM categories ORDER BY name");
         $stmt->execute();
 
-        return $stmt;
+        $getCategoriesName = [];
+
+        while ($result = $stmt->fetch()) {
+            $getCategoriesName[] = $result;
+        }
+
+        return $getCategoriesName;
     }
 
     function getCategoriesId($pdo){
@@ -57,7 +63,13 @@ class categories{
         $stmt = $pdo->prepare("SELECT * FROM categories ORDER BY id");
         $stmt->execute();
 
-        return $stmt;
+        $getCategoriesId = [];
+
+        while ($result = $stmt->fetch()) {
+            $getCategoriesId[] = $result;
+        }
+
+        return $getCategoriesId;
     }
 
 }

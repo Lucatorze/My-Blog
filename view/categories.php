@@ -1,8 +1,4 @@
-<?php
-
-
-
-?>
+<?php require_once('controller/categoriesController.php'); ?>
 
 <section>
 
@@ -13,16 +9,8 @@
             <th colspan="3">Liste des différentes catégories</th>
 
         </tr>
-        <?php
 
-        require_once('model/categoriesManage.php');
-
-        $categories = new categories();
-        $stmt = $categories->getCategoriesName($pdo);
-
-        while ($result = $stmt->fetch()) {
-
-            ?>
+        <?php foreach($getCategoriesName as $result):?>
 
             <tr>
 
@@ -31,9 +19,7 @@
 
             </tr>
 
-            <?php
-        }
-        ?>
+        <?php endforeach;?>
     </table>
 
 </section>

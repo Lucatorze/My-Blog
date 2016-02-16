@@ -1,6 +1,4 @@
-<?php
-include('controller/categoriesController.php');
-?>
+<?php require_once('controller/categoriesController.php'); ?>
 
 <a href="../index.php?pages=newCategories">Ajouter une categorie</a>
 
@@ -12,16 +10,7 @@ include('controller/categoriesController.php');
         <th>Titre</th>
 
     </tr>
-    <?php
-
-    require_once('model/categoriesManage.php');
-
-    $categories = new categories();
-    $stmt = $categories->getCategoriesId($pdo);
-
-    while ($result = $stmt->fetch()) {
-
-        ?>
+    <?php foreach($getCategoriesId as $result):?>
 
         <tr>
 
@@ -30,14 +19,11 @@ include('controller/categoriesController.php');
                 <br>
                 <?php echo '<a href="index.php?pages=listCategories&&deleteCategories=' . $result['id'] . '">'; ?>Supprimer</a>
             </td>
-            <td></td>
-            <td><?php echo '<a href="index.php?pages=viewCategories&&id='.$result['id'].'">'.$result['name'].'</a>'; ?></td>
+            <td>
+                <?php echo '<a href="index.php?pages=viewCategories&&id='.$result['id'].'">'.$result['name'].'</a>'; ?>
+            </td>
 
         </tr>
 
-        <?php
-
-    }
-
-    ?>
+        <?php endforeach;?>
 </table>

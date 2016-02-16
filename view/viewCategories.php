@@ -1,3 +1,5 @@
+<?php require_once('controller/articlesController.php'); ?>
+
 <section>
 
     <table>
@@ -7,15 +9,7 @@
             <th colspan="3">Liste des différents articles</th>
 
         </tr>
-        <?php
-
-        require_once('model/articlesManage.php');
-
-        $articles = new articles();
-        $id = $_GET['id'];
-        $stmt = $articles->getArticlesCategories($pdo, $id);
-
-        while ($result = $stmt->fetch()) {
+        <?php foreach($getArticlesCategories as $result):
 
             $content = substr($result['content'], 0, 120);
 
@@ -29,11 +23,8 @@
 
             </tr>
 
-            <?php
+        <?php endforeach; ?>
 
-        }
-
-        ?>
     </table>
 
 </section>

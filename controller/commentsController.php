@@ -5,6 +5,8 @@ require_once('model/commentsManage.php');
 
 $comments = new comments();
 
+$getCommentsOrder = $comments->getCommentsOrder($pdo);
+
 if (isset($_POST['author']) AND isset($_POST['content'])){
 
     $date = time();

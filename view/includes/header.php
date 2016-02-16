@@ -1,8 +1,4 @@
-<?php
-
-include_once('model/dbconf.php');
-
-?>
+<?php require_once('model/dbconf.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,4 @@
-<?php
-    include('controller/categoriesController.php');
-?>
+<?php require_once('controller/categoriesController.php'); ?>
 <section>
 
     <form action="index.php?pages=listCategories" method="post">

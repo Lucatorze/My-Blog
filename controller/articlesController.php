@@ -1,13 +1,18 @@
 <?php
-
 require_once('model/articlesManage.php');
 
 $articles = new articles();
 $date = time();
 
+$getArticlesCategories = $articles->getArticlesCategories($pdo);
+
+$getArticlesOrder = $articles->getArticlesOrder($pdo);
+
+$getArticlesId = $articles->getArticlesId($pdo);
+
+$getViewArticles = $articles->getViewArticles($pdo);
+
 if (isset($_POST['title']) AND isset($_POST['content'])){
-
-
 
     if ($_POST['idArticles'] == 0){ //Poster un nouvelle articles
 

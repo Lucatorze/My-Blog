@@ -1,6 +1,5 @@
-<?php
-include('controller/articlesController.php');
-?>
+<?php require_once('controller/articlesController.php'); ?>
+
 
 <section>
 
@@ -16,23 +15,13 @@ include('controller/articlesController.php');
             <th>Id catégories</th>
 
         </tr>
-        <?php
-
-        require_once('model/articlesManage.php');
-
-        $articles = new articles();
-        $stmt = $articles->getArticlesId($pdo);
-
-        while ($result = $stmt->fetch())
-        {
-
-            ?>
+        <?php foreach($getArticlesOrder as $result):?>
 
             <tr>
 
                 <td>
                     <?php echo '<a href="index.php?pages=newArticles&&updateArticles=' . $result['id'] . '">'; ?>Modifier</a><br>
-                    <?php echo '<a href="index.php?pages=listArticlesdeleteArticles=' . $result['id'] . '">'; ?>Supprimer</a>
+                    <?php echo '<a href="index.php?pages=listArticles&&deleteArticles=' . $result['id'] . '">'; ?>Supprimer</a>
                 </td>
                 <td><?php echo $result['title']; ?></td>
                 <td><?php echo $result['author']; ?></td>
@@ -40,11 +29,8 @@ include('controller/articlesController.php');
 
             </tr>
 
-            <?php
+        <?php endforeach; ?>
 
-        }
-
-        ?>
     </table>
 
 </section>

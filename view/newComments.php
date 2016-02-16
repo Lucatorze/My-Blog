@@ -1,5 +1,5 @@
 <?php
-include('controller/commentsController.php');
+require_once('controller/commentsController.php');
 ?>
 <section>
 

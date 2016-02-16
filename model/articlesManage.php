@@ -45,12 +45,28 @@ class articles{
         return $result;
     }
 
+    function getViewArticles($pdo){
+
+        $stmt = $pdo->prepare("SELECT * FROM articles WHERE id = :id");
+        $stmt->bindParam("id", $_GET['id']);
+        $stmt->execute();
+        $result = $stmt->fetch();
+
+        return $result;
+    }
+
     function getArticlesOrder($pdo){
 
         $stmt = $pdo->prepare("SELECT * FROM articles ORDER BY id DESC LIMIT 0, 10");
         $stmt->execute();
 
-        return $stmt;
+        $getArticlesOrder = [];
+
+        while ($result = $stmt->fetch()) {
+            $getArticlesOrder[] = $result;
+        }
+
+        return $getArticlesOrder;
     }
 
     function getArticlesId($pdo){
@@ -58,16 +74,28 @@ class articles{
         $stmt = $pdo->prepare("SELECT * FROM articles ORDER BY id");
         $stmt->execute();
 
-        return $stmt;
+        $getArticlesId = [];
+
+        while ($result = $stmt->fetch()) {
+            $getArticlesId[] = $result;
+        }
+
+        return $getArticlesId;
     }
 
-    function getArticlesCategories($pdo, $id){
+    function getArticlesCategories($pdo){
 
         $stmt = $pdo->prepare("SELECT * FROM articles WHERE idCat = :idCat");
-        $stmt->bindParam("idCat", $id);
+        $stmt->bindParam("idCat", $_GET['id']);
         $stmt->execute();
 
-        return $stmt;
+        $getArticlesCategories = [];
+
+        while ($result = $stmt->fetch()) {
+            $getArticlesCategories[] = $result;
+        }
+
+        return $getArticlesCategories;
     }
 
 

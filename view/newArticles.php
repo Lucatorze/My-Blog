@@ -1,5 +1,6 @@
 <?php
-include('controller/articlesController.php');
+require_once('controller/articlesController.php');
+require_once('controller/categoriesController.php');
 ?>
 
 <section>
@@ -22,12 +23,7 @@ include('controller/articlesController.php');
 
             <?php
 
-            require_once('model/categoriesManage.php');
-
-            $categories = new categories();
-            $stmt2 = $categories->getCategoriesId($pdo);
-
-            while($result2 = $stmt2->fetch()){
+            foreach($getCategoriesId as $result2){
 
                 echo '<option value="'.$result2['id'].'" name="'.$result2['id'].'">'.$result2['name'].'</option>';
 
