@@ -10,5 +10,11 @@ class register{
         $addUser->bindParam(5, $_POST['email']);
         $addUser->bindParam(6, $date);
         $addUser->execute();
-    }
+      }
+    function verif($pdo){
+       $verif = $pdo->prepare("SELECT * FROM users");
+       $verif->execute();
+       $result = $verif->fetch();
+       return $result;
+     }
 }
