@@ -1,4 +1,6 @@
-<?php require_once('controller/profileController.php'); ?>
+<?php
+require_once('controller/profileController.php');
+?>
 
 <section>
 
@@ -16,4 +18,14 @@
         <br />Email :<?php echo "<br />".$result['email']?>
     </p>
 
+    <!-- EDITION NEW PROFILE ----------------------------------------------->
+    <br><br>
+    <p>EDIT YOUR PROFILE ========================></p>
+    <form method="POST" action="" >
+        <p>New nickname</P>
+        <input type="text" name="newNickname"><br><br>
+        <p>New email</p>
+        <input type="email" name="newEmail"><br><br>
+        <input type="submit" id="btnSubmit" value="send">
+    </form>
 </section>
