@@ -2,30 +2,69 @@
 require_once('controller/profileController.php');
 ?>
 
-<section>
+<section id="containerProfile">
 
-    <h3>PROFILE USER <?php echo $result['nickname'] ?></h3>
+    <div class="btnInfo">
+        <img class="imageFlech" src="./assets/img/flech.png">
+        <img class="imageFlech2" src="./assets/img/flech2.png">
+    </div>
+    <div class="blocInfoPofile">
+        <h3><div id="titleProfile">PROFILE UTILISATEUR</div><div class="profileResponse"> ( <?php echo $result['nickname'] ?> )</div></h3>
     <p>
-        Pseudo : <?php echo "<br />".$result['nickname']?>
+        <br>Pseudo<div class="profileResponse"><?php echo "<br>".$result['nickname']?></div>
     </p>
     <p>
-        <br />Nom : <?php echo "<br />".$result['lastname']?>
+        <br>Nom<div class="profileResponse"><?php echo "<br>".$result['lastname']?></div>
     </p>
     <p>
-        <br />Prenom :<?php echo "<br />".$result['firstname']?>
+        <br>Prenom<div class="profileResponse"><?php echo "<br>".$result['firstname']?></div>
     </p>
     <p>
-        <br />Email :<?php echo "<br />".$result['email']?>
+        <br>Email<div class="profileResponse"><?php echo "<br>".$result['email']?></div>
     </p>
-
+    <p>
+        <br>ID user<div class="profileResponse"><?php echo "<br>".$_SESSION['userId']?></div>
+    </p>
+</div>
     <!-- EDITION NEW PROFILE ----------------------------------------------->
     <br><br>
-    <p>EDIT YOUR PROFILE ========================></p>
+    <p><h3>EDITER VOTRE PROFILE</h3></p>
     <form method="POST" action="" >
-        <p>New nickname</P>
+        <p>Nouveau pseudo</P>
         <input type="text" name="newNickname"><br><br>
-        <p>New email</p>
+        <p>Nouveau email</p>
         <input type="email" name="newEmail"><br><br>
-        <input type="submit" id="btnSubmit" value="send">
+        <input type="submit" id="btnSubmit" value="Envoyer">
     </form>
+    <div class="refreshEmail">
+        <?php echo $resetNickname?>
+    </div>
+    <div class="refreshNickname">
+        <?php echo $resetEmail?>
+    </div>
+    <script>
+        $(function (){
+            var i = 1;
+                $('.btnInfo').click(function () {
+                    i++;
+                    if (i % 2 == 0) {
+                        $('.imageFlech').css({
+                            'display':'inline-block'
+                        });
+                        $('.imageFlech2').css({
+                            'display' : 'none'
+                        });
+                        $('.blocInfoPofile').slideUp();
+                    } else if (i % 2 != 0) {
+                        $('.imageFlech').css({
+                            'display':'none'
+                        });
+                        $('.imageFlech2').css({
+                            'display' : 'inline-block'
+                        });
+                        $('.blocInfoPofile').slideToggle();
+                    }
+                })
+        })
+    </script>
 </section>

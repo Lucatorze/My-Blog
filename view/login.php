@@ -1,18 +1,43 @@
 <?php require_once("controller/loginController.php"); ?>
 
-<section>
+<section id="loginSection">
+    <div class="contenairLogin">
+        <form id="loginForm" name="loginForm" method="post" action="index.php?pages=login">
+            <label for"nickname">Pseudo</label>
+            <input type="text" name="nickname" id="nickname" placeholder="xX-Kikoo-xX"><br>
+            <br>
 
-    <form id="loginForm" name="loginForm" method="post" action="index.php?pages=login">
+            <label for"password">Mot de passe</label>
+            <input type="password" name="password" id="password"><br>
+            <br>
 
-        <label for"email">Pseudo</label>
-        <input type="text" name="nickname" id="nickname" placeholder="xX-Kikoo-xX"><br>
-        <br>
+            <input type="submit" name="btnSubmit" value="Envoyer" id="btnSubmit">
+        </form>
+        <div class="contenairLoginResult">
+            <div class="nicknameInvalide">
+                <?php echo $nicknameInvalide ?>
+            </div>
+            <div class="passwordInvalide">
+                <?php echo $passwordInvalide ?>
+            </div>
+            <div class="allGood">
+                <?php echo $allGood ?>
+            </div>
+        </div>
 
-        <label for"pwd">Mot de passe</label>
-        <input type="password" name="password" id="password"><br>
-        <br>
-
-        <input type="submit" name="btnSubmit" value="Envoyer" id="btnSubmit">
-    </form>
-
+    </div>
+    <script>
+        $(function () {
+            $('#nickname').focus();
+            $('input').mouseover(function (){
+                $(this).css({
+                    'backgroundColor' : 'white',
+                    'transition' : '0.8s'
+                });
+            });
+            $('.elevator').css({
+                'display' : 'none'
+            });
+        });
+    </script>
 </section>

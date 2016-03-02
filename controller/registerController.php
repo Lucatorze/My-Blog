@@ -3,64 +3,64 @@ require_once("model/registerManage.php");
 
 $register = new register();
 $verif = $register->verif($pdo);
-var_dump($verif);
+
 $date = time();
+$formOk = true;
+$errors = array(); //AJAX
+$formBad = '';
+$formGood = '';
+
 
 if(isset($_POST['firstname'])){
-
-    $formOk = true;
-
     if(isset($_POST['firstname']) && strlen($_POST['firstname'])>2){
-        $_POST['firstname'] = trim(htmlspecialchars($_POST['firstname']));
-        echo $_POST['firstname']."<br>";
+        $_POST['firstname'] = trim(htmlentities($_POST['firstname']));
     }else{
-        echo "veuillez saisir un prénom.";
+        $errors['firstname'] = ' : Veuillez saisir un pseudo de 4 caractères minimum';
         $formOk = false;
     }
     if(isset($_POST['lastname']) && strlen($_POST['lastname'])>2){
-        $_POST['lastname'] = trim(htmlspecialchars($_POST['lastname']));
-        echo $_POST['lastname']."<br>";
+        $_POST['lastname'] = trim(htmlentities($_POST['lastname']));
     }else{
-        echo "veuillez saisir un nom correct.";
+        $errors['lastname'] = " : veuillez saisir un nom correct.";
         $formOk = false;
     }
 
     if(isset($_POST['nickname']) && strlen($_POST['nickname'])>5){
         if($verif['nickname'] == $_POST['nickname']){
-            echo "ce pseudo est déjà pris";
+            $errors['nickname'] =  " : ce pseudo est déjà pris";
             $formOk = false;
         }else{
-            $_POST['nickname'] = trim(htmlspecialchars($_POST['nickname']));
-            echo $_POST['nickname']."<br>";
+            $_POST['nickname'] = trim(htmlentities($_POST['nickname']));
         }
     }else{
-        echo "veuillez saisir un pseudo correct.";
+        $errors['nickname'] = " : veuillez saisir un pseudo correct.";
         $formOk = false;
     }
     if(isset($_POST['password']) && strlen($_POST['password'])>4 && isset($_POST['password2']) && $_POST['password'] === $_POST['password2']){
         $salt = 'zezjaejzeoakzodkozdkozadkoazdoazkdokaodkazodkozakdoazdkoazkdaozdaokdoakzodkazodkaodkazodkoakoladkaodkaodkoakolkoo';
-        $_POST['password'] = trim(htmlspecialchars($salt.sha1($_POST['password'])));
-        echo $_POST['password']."<br>";
+        $_POST['password'] = trim(htmlentities($salt.sha1($_POST['password'])));
     }else{
-        echo "veuillez saisir un mdp valide";
+        $errors['pwd'] =  " : veuillez saisir un mdp valide";
         $formOk = false;
     }
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         if($verif['email'] == $_POST['email']){
-            echo "ce mail est déjà utilisé";
+            $errors['email'] =  "ce mail est déjà utilisé";
             $formOk = false;
         }else{
-            $_POST['email'] = trim(htmlspecialchars($_POST['email']));
-            echo $_POST['email']."<br>";
+            $_POST['email'] = trim(htmlentities($_POST['email']));
         }
     }else{
-        echo "veuillez saisir un email valide";
+        $errors['email'] =  " : veuillez saisir un email valide";
         $formOk = false;
     }
     if($formOk){
         $register->registerUser($pdo,$date);
-        echo "utilisateur ajouté avec succès";
-        var_dump($formOk);
+
+        $formGood = json_encode(array('success'=>true, "user"=>$_POST));
+    }else{
+        http_response_code(400);
+        $formBad = json_encode(array('success'=>false, "errors"=>$errors));
     }
 
 }

@@ -20,11 +20,13 @@ img{
     margin-bottom: -20px;
 }
 h3{
-    text-align: center;
     display: block;
+    text-align: center;
 }
-h3:hover{
-    color : pink;
+.elevator{
+    width : 50px;
+    margin-left: auto;
+    margin-right : 20px;
 }
 .article1{
     width: auto;
@@ -38,21 +40,28 @@ h3:hover{
     background-color: rgba(137, 130, 130, 0.4);
     display: block;
 }
-@keyframes animationBackground {
-    0%{background-position:51% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:51% 0%}
-}
 
 body{
-    background: linear-gradient(45deg, #ecf0f1,#F22613);
-    background-size: 1600% 1600%;
-    animation: animationBackground 450s ease infinite;
+   background : #ecf0f1;
+}
+.imageFlech{
+    width : 40px;
+    height : auto;
+    margin-left :5px;
+    margin-top : -45px;
+    float : left;
+}
+.imageFlech2{
+    width : 40px;
+    height : auto;
+    margin-left : 5px;
+    margin-top : -45px;
+    float:left;
 }
 
 form{
     text-align: center;
-    color : ghostwhite;
+    color : #0f0f0f;
     font-family: 'roboto',sans-serif;
 }
 input{
@@ -64,16 +73,20 @@ input{
     border: none;
     height: 30px;
     font-size : 80%;
+    color : black;
+    background-color : #bdc3c7;
+    box-shadow: 1px 2px 2px 1px #656565;
 }
+::-webkit-input-placeholder {
+    color:white;
+    opacity: 0.5;
+}
+
 #btnSubmit{
     width: 150px;
     border-radius: 5px;
     border: none;
     background: #496a80;
-    background-image: -webkit-linear-gradient(top, #496a80, #363a3d);
-    background-image: -moz-linear-gradient(top, #496a80, #363a3d);
-    background-image: -ms-linear-gradient(top, #496a80, #363a3d);
-    background-image: -o-linear-gradient(top, #496a80, #363a3d);
     background-image: linear-gradient(to bottom, #496a80, #363a3d);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -88,10 +101,143 @@ input{
 }
 #btnSubmit:hover {
     background: #615d61;
-    background-image: -webkit-linear-gradient(top, #615d61, #050505);
-    background-image: -moz-linear-gradient(top, #615d61, #050505);
-    background-image: -ms-linear-gradient(top, #615d61, #050505);
-    background-image: -o-linear-gradient(top, #615d61, #050505);
+    transition : 0.8s;
     background-image: linear-gradient(to bottom, #615d61, #050505);
     text-decoration: none;
+}
+
+#blocError{
+     text-align : left;
+     padding : 10px;
+     margin-top :15px;
+     margin-bottom :8px;
+     margin-left : 8px;
+     margin-right :8px;
+     color : #0f0f0f;
+     transition : 0.5s;
+ }
+#blocError:hover{
+    color : firebrick;
+    transition : 0.5s;
+}
+
+#blocSuccess{
+    color : #0f0f0f;
+    transition : 0.5s;
+    text-align : left;
+    padding : 10px;
+    margin-top :15px;
+    margin-bottom :8px;
+    margin-left : 8px;
+    margin-right :8px;
+
+}
+#blocSuccess:hover{
+    color : lawngreen;
+    transition : 0.5s;
+}
+
+.contenairLogin{
+    line-height:65px;
+    vertical-align:center;
+    font-size : 110%;
+}
+.nicknameInvalide, .passwordInvalide{
+    color : firebrick;
+    text-align : center;
+}
+.allGood{
+    color : lawngreen;
+}
+#containerProfile p {
+    display: block;
+    text-align : center;
+}
+.blocInfoPofile{
+    height: 550px;
+    box-shadow: 0px 5px 0px 0px #2c3e50;
+    color : #2c3e50;
+    background : whitesmoke;
+    margin-top : 50px;
+}
+#titleProfile{
+    color : black;
+}
+.profileResponse{
+    color : black;
+    display: block;
+    text-align : center;
+    line-height: 5px;
+}
+.refreshNickname{
+    text-align: center;
+    margin-top : 10px;
+    font-size : 100%;
+}
+/* Tablet version */
+@media (min-width: 641px) {
+    main {
+        font-size : 300%;
+    }
+    input{
+        width : 300px;
+    }
+    ::-webkit-input-placeholder {
+        color:white;
+        opacity: 0.5;
+        font-size : 100%;
+    }
+    .contenairLogin{
+        line-height:80px;
+        font-size : 120%;
+    }
+    .blocInfoPofile{
+        height: 635px;
+    }
+}
+
+/* Desktop version */
+@media (min-width: 1025px) {
+    main {
+        font-size : 450%;
+    }
+    input{
+        width : 450px;
+        height : 50px;
+    }
+    ::-webkit-input-placeholder {
+        font-size : 100%;
+    }
+    #btnSubmit{
+        width : 300px;
+        font-size : 80%;
+        margin-bottom : 25px;
+    }
+    .contenairLogin{
+        font-size : 90%;
+    }
+    .contenairLoginResult{
+        font-size : 100%;
+    }
+    .allGood{
+        font-size : 90%;
+    }
+    .profileResponse {
+        color: black;
+        display: block;
+        text-align: center;
+        line-height: initial;
+    }
+    .blocInfoPofile{
+        height : auto;
+    }
+    .refreshNickname{
+        text-align: left;
+        margin-left : 50px;
+    }
+    .elevator{
+        margin-right : 120px;
+        margin-bottom : 40px;
+        width : 68px;
+    }
 }
