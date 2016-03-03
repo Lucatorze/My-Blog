@@ -1,45 +1,51 @@
 (function($){
-    $.fn.displayInfo = function(imgWidth,imgMarginTop,imgMarginleft,imgPosition){
-        var i = 0;
-        var imgParam = {
-            width: imgWidth,
-            marginTop: imgMarginTop,
-            marginLeft: imgMarginleft,
-            position: imgPosition
+    $.fn.tabSlide = function(divImage1,divImage2,divContainer){
+
+        var i = 1;
+        var param = {
+            divImage1 :divImage1,
+            divImage2 : divImage2,
+            divContainer : divContainer
         };
-        $('.btnDesc').click(function () {
+        // BEFORE CLICK //////////////////////////////////
+        $('.'+param.divImage1).css({
+            'display' : 'none'
+        })
+        ///////////////////////////////////////////////////
+
+        $(this).click(function () {
             i++;
             if (i % 2 == 0) {
-                $('.imageFlech').css({
-                    'display':'inline-block',
-
-                    'width': imgParam.imgWidth,
-                    'marginTop': imgParam.imgMarginTop,
-                    'marginLeft': imgParam.imgMarginleft,
-                    'float' : imgParam.imgPosition
+                $('.'+param.divImage1).css({
+                    'display':'inline-block'
                 });
-                $('.imageFlech2').css({
+                $('.'+param.divImage2).css({
                     'display' : 'none'
                 });
-                $('.descContainer').slideUp();
+                $('.'+param.divContainer).slideUp();
+
             } else if (i % 2 != 0) {
-                $('.imageFlech').css({
+                $('.'+param.divImage1).css({
                     'display':'none'
                 });
-                $('.imageFlech2').css({
-                    'display' : 'inline-block',
-
-                    'width': imgParam.imgWidth,
-                    'marginTop': imgParam.imgMarginTop,
-                    'marginLeft': imgParam.imgMarginleft,
-                    'float' : imgParam.imgPosition
-
+                $('.'+param.divImage2).css({
+                    'display' : 'inline-block'
                 });
-                $('.descContainer').slideToggle();
+                $('.'+param.divContainer).slideToggle();
             }
         });
+
+
+
     };
 })(jQuery);
-//
-// URL image x 2
-// CSS => image (width,height(auto),margin,position)
+
+/* __________________READ ME __________________*/
+/*
+ BEFORE USE  :
+
+ * SELECT 1 BUTTON ID OR CLASS to event CLICK
+ * DEFINE 2 CONTAINER FOR IMAGE
+ * DEFINE 1 CONTAINER FOR SLIDE EFFECT
+
+ */

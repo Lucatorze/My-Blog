@@ -8,7 +8,7 @@ require_once('controller/profileController.php');
         <img class="imageFlech" src="./assets/img/flech.png">
         <img class="imageFlech2" src="./assets/img/flech2.png">
     </div>
-    <div class="blocInfoPofile">
+    <div class="blocInfoProfile">
         <h3><div id="titleProfile">PROFILE UTILISATEUR</div><div class="profileResponse"> ( <?php echo $result['nickname'] ?> )</div></h3>
     <p>
         <br>Pseudo<div class="profileResponse"><?php echo "<br>".$result['nickname']?></div>
@@ -43,28 +43,6 @@ require_once('controller/profileController.php');
         <?php echo $resetEmail?>
     </div>
     <script>
-        $(function (){
-            var i = 1;
-                $('.btnInfo').click(function () {
-                    i++;
-                    if (i % 2 == 0) {
-                        $('.imageFlech').css({
-                            'display':'inline-block'
-                        });
-                        $('.imageFlech2').css({
-                            'display' : 'none'
-                        });
-                        $('.blocInfoPofile').slideUp();
-                    } else if (i % 2 != 0) {
-                        $('.imageFlech').css({
-                            'display':'none'
-                        });
-                        $('.imageFlech2').css({
-                            'display' : 'inline-block'
-                        });
-                        $('.blocInfoPofile').slideToggle();
-                    }
-                })
-        })
+        $('.btnInfo').tabSlide('imageFlech','imageFlech2','blocInfoProfile');
     </script>
 </section>

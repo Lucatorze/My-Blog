@@ -26,8 +26,8 @@
         </fieldset>
     </form>
     <div class="contenairResult">
-        <div id="blocSuccess"><?php echo $formGood ?></div>
-        <div id="blocError"><?php echo $formBad ?></div>
+        <div id="blocSuccess"></div>
+        <div id="blocError"></div>
     </div>
     <script>
         $(function () {
@@ -38,24 +38,5 @@
                     'transition' : '0.8s'
                 });
             });
-                /* AJAX
-            $('#registerForm').submit(function () {
-                $.ajax({
-                    url: 'controller/registerController.php',
-                    method: 'POST',
-                    data:$(this).serialize(),
-                    dataType: 'json',
-                    success: function(data){
-                        console.log(data);
-                    },
-                    error: function(data, status, error) {
-                        console.log(data,status,error);
-                        }
-                    });
-                return false;
-            });
-            */
-
-        });
     </script>
 </section>
