@@ -32,11 +32,12 @@
     <script>
         $(function () {
             $(':text[name="firstname"]').focus();
-            $('input').mouseover(function (){
+            $('input').mouseover(function () {
                 $(this).css({
-                    'backgroundColor' : 'white',
-                    'transition' : '0.8s'
+                    'backgroundColor': 'white',
+                    'transition': '0.8s'
                 });
             });
+        });
     </script>
 </section>
