@@ -255,7 +255,7 @@ section{
 }
 
 .header .menu-btn:checked ~ .menu {
-    max-height: 260px;
+    max-height: 330px;
     position: relative;
     z-index: 10000;
 }
