@@ -2,11 +2,11 @@
 
 <section>
 
-    <table>
+    <table class="categories">
 
-        <tr>
+        <tr class="categories">
 
-            <th colspan="3">Liste des différents articles</th>
+            <th class="categories" colspan="3">Liste des différents articles<hr></th>
 
         </tr>
         <?php foreach($getArticlesCategories as $result):
@@ -15,11 +15,11 @@
 
             ?>
 
-            <tr>
+            <tr class="categories">
 
-                <td><?php echo '<a href="index.php?pages=viewArticles&&id=' . $result['id'] . '">' . $result['title'] . '</a>'; ?></td>
-                <td><?php echo $result['author']; ?></td>
-                <td><?php echo $content; ?> ...</td>
+                <td class="categories"><?php echo '<a href="index.php?pages=viewArticles&&id=' . $result['id'] . '">' . $result['title'] . '</a>'; ?></td>
+                <td class="categories"><?php echo $result['author']; ?></td>
+                <td class="categories"><?php echo $content; ?> ...<hr></td>
 
             </tr>
 

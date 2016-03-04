@@ -6,23 +6,21 @@ require_once('controller/commentsController.php');
 
 <section>
 
-    <h1>Titre : <?php echo $getViewArticles['title'] ?></h1>
+    <div class="viewArticleConteneur">
+        <div class="titleArticle"><?php echo $getViewArticles['title'] ?></div>
 
-    <div>
+        <div class="viewArticleContent">
+            <?php echo $getViewArticles['content'] ?>
+        </div>
 
-        Auteur : <?php echo $getViewArticles['author'] ?>
-
-
-        <?php echo $getViewArticles['content'] ?>
-
-        Ajouté le <?php echo date('d/m/Y', $getViewArticles['date']); ?><br>
+        <div class="author">par <b><?php echo $getViewArticles['author']; ?></b><br> le <?php echo date('d/m/Y', $getViewArticles['date']); ?></div>
 
         <?php
 
             if(isset($_SESSION['userId']) && $getViewArticles['idAuthor'] == $_SESSION['userId']){
 
-                echo '<a href="index.php?pages=newArticles&&updateArticles=' . $getViewArticles['id'] . '">Modifier cet articles</a><br>';
-                echo '<a href="index.php?pages=viewArticles&&deleteArticles=' . $getViewArticles['id'] . '">Supprimer cet articles</a>';
+                echo '<a class="linkViewArticle" href="index.php?pages=newArticles&&updateArticles=' . $getViewArticles['id'] . '">Modifier cet articles</a>';
+                echo '<a class="linkViewArticle" href="index.php?pages=viewArticles&&deleteArticles=' . $getViewArticles['id'] . '">Supprimer cet articles</a>';
 
             }
 
@@ -32,24 +30,25 @@ require_once('controller/commentsController.php');
 
     <hr>
 
-    <div>
+
+    <div class="newsComm">
 
         <?php if(isset($_SESSION['userId'])){?>
 
-        <form action="index.php?pages=viewArticles&&id=<?php echo $_GET['id']; ?>" method="post">
+        <form class="commentForm" action="index.php?pages=viewArticles&&id=<?php echo $_GET['id']; ?>" method="post">
 
-            <label for="author">Auteur :</label>
-            <input type="text" name="author" id="author" value="<?php echo $result['author']; ?>"><br>
+            <label class="commentForm" for="author">Auteur :</label>
+            <input class="commentForm" type="text" name="author" id="author" value="<?php echo $result['author']; ?>"><br>
             <br>
 
-            <label for="content">Description :</label>
-            <textarea name="content" id="content" cols="40" rows="10"><?php echo $result['content']; ?></textarea><br>
+            <label class="commentForm" for="content">Description :</label>
+            <textarea class="commentForm" name="content" id="content" cols="40" rows="10"><?php echo $result['content']; ?></textarea><br>
 
-            <input type="hidden" name="idAuthor" value="<?php echo $_SESSION['userId']; ?>">
-            <input type="hidden" name="idComments" value="<?php echo $result['id']; ?>">
-            <input type="hidden" name="idArticles" value="<?php echo $_GET['id']; ?>">
+            <input class="commentForm" type="hidden" name="idAuthor" value="<?php echo $_SESSION['userId']; ?>">
+            <input class="commentForm" type="hidden" name="idComments" value="<?php echo $result['id']; ?>">
+            <input class="commentForm" type="hidden" name="idArticles" value="<?php echo $_GET['id']; ?>">
 
-            <input type="submit" value="Envoyer">
+            <input class="commentForm" type="submit" value="Envoyer">
 
         </form>
 
@@ -71,20 +70,18 @@ require_once('controller/commentsController.php');
 
         <?php foreach($getCommentsOrder as $result):?>
 
-            <div>
+            <div class="comment">
 
-                Auteur : <?php echo $result['author'] ?><br>
+                <div class="commentContent"><?php echo $result['content'] ?></div>
 
-                <?php echo $result['content'] ?><br>
-
-                Ajouté le <?php echo date('d/m/Y', $result['date']); ?><br>
+                <div class="dateComm"><?php echo $result['author'] ?><br> le <?php echo date('d/m/Y', $result['date']); ?></div>
 
                 <?php
 
                 if(isset($_SESSION['userId']) && $result['idAuthor'] == $_SESSION['userId']){
 
-                    echo '<a href="index.php?pages=editComments&&updateComments=' . $result['id'] . '">Modifier ce commentaire</a><br>';
-                    echo '<a href="index.php?pages=viewArticles&&deleteComments=' . $result['id'] . '">Supprimer ce commentaire</a>';
+                    echo '<a class="linkViewArticle" href="index.php?pages=editComments&&updateComments=' . $result['id'] . '">Modifier</a>';
+                    echo '<a class="linkViewArticle" href="index.php?pages=viewArticles&&deleteComments=' . $result['id'] . '">Supprimer</a>';
 
                 }
 

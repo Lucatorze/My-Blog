@@ -2,21 +2,20 @@
 
 <section>
 
-    <table>
+    <table class="categories">
 
-        <tr>
+        <tr class="categories">
 
-            <th colspan="3">Liste des différentes catégories</th>
+            <th class="categories" colspan="3">Liste des différentes catégories<hr></th>
 
         </tr>
 
         <?php foreach($getCategoriesName as $result):?>
 
-            <tr>
+            <tr class="categories">
 
-                <td><?php echo '<a href="index.php?pages=viewCategories&&id='.$result['id'].'">'.$result['name'].'</a>'; ?></td>
-                <td><?php echo $result['description']; ?></td>
-
+                <td class="categories"><?php echo '<a href="index.php?pages=viewCategories&&id='.$result['id'].'">'.$result['name'].'</a>'; ?></td>
+                <td class="categories"><?php echo $result['description']; ?><hr></td>
             </tr>
 
         <?php endforeach;?>
