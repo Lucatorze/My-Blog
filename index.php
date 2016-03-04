@@ -32,6 +32,9 @@ else{
         case 'newComments':
             require_once('view/newComments.php');
             break;
+        case 'editComments':
+            require_once('view/editComments.php');
+            break;
 
         // Page Catégories
         case 'categories':
@@ -51,14 +54,25 @@ else{
         case 'register':
             require_once('view/register.php');
             break;
+        case 'registerOk':
+            require_once('view/registerOk.php');
+            break;
         case 'login':
             require_once('view/login.php');
+            break;
+        case 'loginOk':
+            require_once('view/loginOk.php');
             break;
         case 'profile':
             require_once('view/profile.php');
             break;
         case 'logout':
             require_once('view/logout.php');
+            break;
+
+        //Page Admin
+        case 'admin':
+            require_once('view/admin.php');
             break;
     }
 }
