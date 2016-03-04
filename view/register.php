@@ -29,6 +29,7 @@
         <div id="blocSuccess"></div>
         <div id="blocError"><?php echo $error; ?></div>
     </div>
+    <!-- <script src="./assets/js/registerAjax.js"></script> -->
     <script>
         $(function () {
             $(':text[name="firstname"]').focus();

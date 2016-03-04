@@ -28,6 +28,7 @@ require_once('controller/profileController.php');
 </div>
     <!-- EDITION NEW PROFILE ----------------------------------------------->
     <br><br>
+    <div class="containerNewProfile">
     <p><h3>EDITER VOTRE PROFILE</h3></p>
     <form method="POST" action="" >
         <p>Nouveau pseudo</P>
@@ -36,6 +37,7 @@ require_once('controller/profileController.php');
         <input type="email" name="newEmail"><br><br>
         <input type="submit" id="btnSubmit" value="Envoyer">
     </form>
+    </div>
     <div class="refreshEmail">
         <?php echo $resetNickname?>
     </div>

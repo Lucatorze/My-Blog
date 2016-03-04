@@ -56,6 +56,7 @@ if(isset($_POST))
 
 
         echo(json_encode(array('success'=>true, "user"=>$_POST)));
+
         $register->registerUser($pdo,$date);
     }
 } else {

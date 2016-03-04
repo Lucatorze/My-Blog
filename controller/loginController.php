@@ -11,7 +11,7 @@ if(isset($_SESSION['userId'])){
     $login = new login();
     if(isset($_POST['nickname'])){
         $salt = 'zezjaejzeoakzodkozdkozadkoazdoazkdokaodkazodkozakdoazdkoazkdaozdaokdoakzodkazodkaodkazodkoakoladkaodkaodkoakolkoo';
-        $_POST['password']= trim(htmlentities($salt.sha1($_POST['password'])));
+        $_POST['password'] = trim(htmlentities(sha1(sha1($_POST['password']).$salt)));
         $result = $login->loginUser($pdo);
         if( $result === false){
             $error = "Votre pseudo est introuvable !";
