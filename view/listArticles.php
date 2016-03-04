@@ -3,6 +3,13 @@
 
 <section>
 
+    <?php
+
+    if(isset($_SESSION['userId']) && isset($_SESSION['admin'])) {
+
+    ?>
+
+    <a href="index.php?pages=admin">Administration</a><br>
     <a href="index.php?pages=newArticles">Ajouter un article</a>
 
     <table>
@@ -32,5 +39,19 @@
         <?php endforeach; ?>
 
     </table>
+
+    <?php
+
+        }else {
+
+    ?>
+
+        Vous devez être connecté en tant qu'administrateur pour accéder à cet page !
+
+    <?php
+
+    }
+
+    ?>
 
 </section>

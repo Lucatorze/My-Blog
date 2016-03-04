@@ -5,6 +5,13 @@ require_once('controller/categoriesController.php');
 
 <section>
 
+    <?php
+
+    if(isset($_SESSION['userId'])) {
+
+    ?>
+
+
     <form action="index.php?pages=listArticles" method="post">
 
         <label for="title">Titre :</label>
@@ -33,11 +40,26 @@ require_once('controller/categoriesController.php');
 
         </select>
 
+        <input type="hidden" name="idAuthor" value="<?php echo $_SESSION['userId']; ?>">
         <input type="hidden" name="idArticles" value="<?php echo $result['id']; ?>">
 
         <input type="submit" value="Envoyer">
 
         </p>
     </form>
+
+        <?php
+
+    }else {
+
+        ?>
+
+        Vous devez être connecté pour accéder à cet page !
+
+        <?php
+
+    }
+
+    ?>
 
 </section>

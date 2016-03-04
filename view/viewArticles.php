@@ -12,22 +12,21 @@ require_once('controller/commentsController.php');
 
         Auteur : <?php echo $getViewArticles['author'] ?>
 
-    </div>
-
-    <div >
 
         <?php echo $getViewArticles['content'] ?>
 
-    </div>
+        Ajouté le <?php echo date('d/m/Y', $getViewArticles['date']); ?><br>
 
-    <div>
+        <?php
 
-        <ul>
+            if(isset($_SESSION['userId']) && $getViewArticles['idAuthor'] == $_SESSION['userId']){
 
-            <li>Ajouté le <?php echo date('d/m/Y', $getViewArticles['date']); ?></li>
-            <li><a href="index.php?pages=newComments&&id=<?php echo $getViewArticles['id']; ?>">Ajouter un commentaire</a></li>
+                echo '<a href="index.php?pages=newArticles&&updateArticles=' . $getViewArticles['id'] . '">Modifier cet articles</a><br>';
+                echo '<a href="index.php?pages=viewArticles&&deleteArticles=' . $getViewArticles['id'] . '">Supprimer cet articles</a>';
 
-        </ul>
+            }
+
+        ?>
 
     </div>
 
@@ -35,23 +34,61 @@ require_once('controller/commentsController.php');
 
     <div>
 
+        <?php if(isset($_SESSION['userId'])){?>
+
+        <form action="index.php?pages=viewArticles&&id=<?php echo $_GET['id']; ?>" method="post">
+
+            <label for="author">Auteur :</label>
+            <input type="text" name="author" id="author" value="<?php echo $result['author']; ?>"><br>
+            <br>
+
+            <label for="content">Description :</label>
+            <textarea name="content" id="content" cols="40" rows="10"><?php echo $result['content']; ?></textarea><br>
+
+            <input type="hidden" name="idAuthor" value="<?php echo $_SESSION['userId']; ?>">
+            <input type="hidden" name="idComments" value="<?php echo $result['id']; ?>">
+            <input type="hidden" name="idArticles" value="<?php echo $_GET['id']; ?>">
+
+            <input type="submit" value="Envoyer">
+
+        </form>
+
+            <?php
+
+
+            }else{
+        ?>
+
+            Vous devez être connecté pour commenter cet article !
+
+        <?php
+            }
+        ?>
+
+    </div>
+
+    <div>
+
         <?php foreach($getCommentsOrder as $result):?>
 
             <div>
 
-                Auteur : <?php echo $result['author'] ?>
+                Auteur : <?php echo $result['author'] ?><br>
 
-            </div>
+                <?php echo $result['content'] ?><br>
 
-            <div >
+                Ajouté le <?php echo date('d/m/Y', $result['date']); ?><br>
 
-                <?php echo $result['content'] ?>
+                <?php
 
-            </div>
+                if(isset($_SESSION['userId']) && $result['idAuthor'] == $_SESSION['userId']){
 
-            <div>
+                    echo '<a href="index.php?pages=editComments&&updateComments=' . $result['id'] . '">Modifier ce commentaire</a><br>';
+                    echo '<a href="index.php?pages=viewArticles&&deleteComments=' . $result['id'] . '">Supprimer ce commentaire</a>';
 
-                Ajouté le <?php echo date('d/m/Y', $result['date']); ?>
+                }
+
+                ?>
 
             </div>
 

@@ -2,6 +2,13 @@
 
 <section id="loginSection">
     <div class="contenairLogin">
+
+        <div>
+
+            <?php echo $error; ?>
+
+        </div>
+
         <form id="loginForm" name="loginForm" method="post" action="index.php?pages=login">
             <label for"nickname">Pseudo</label>
             <input type="text" name="nickname" id="nickname" placeholder="xX-Kikoo-xX"><br>

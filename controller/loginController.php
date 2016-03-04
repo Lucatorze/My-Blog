@@ -7,25 +7,37 @@ if(isset($_SESSION['userId'])){
     exit;
 
 }else{
+    $error = '';
     $login = new login();
-    $allGood = '';
-    $nicknameInvalide='';
-    $passwordInvalide='';
     if(isset($_POST['nickname'])){
         $salt = 'zezjaejzeoakzodkozdkozadkoazdoazkdokaodkazodkozakdoazdkoazkdaozdaokdoakzodkazodkaodkazodkoakoladkaodkaodkoakolkoo';
         $_POST['password']= trim(htmlentities($salt.sha1($_POST['password'])));
         $result = $login->loginUser($pdo);
         if( $result === false){
-            $nicknameInvalide = "Votre pseudo est introuvable !";
+            $error = "Votre pseudo est introuvable !";
         }
         elseif(empty($_POST['password'])){
-            echo "Veuillez rentrer un password !";
+            $error = "Veuillez rentrer un password !";
         }
         elseif($_POST['password'] != $result['password']){
-            $passwordInvalide ="Mot de passe incorrect";
+            $error = "Mot de passe incorrect";
         }else{
-            $_SESSION['userId'] = $result['id'];
-            $allGood = " Bienvenue vous êtes maintenant connecté  IL FAUDRA SE METTRE SUR LA PAGE D ACCUEIL";
+
+            if($result['rank'] == 2){
+
+                $_SESSION['admin'] = $result['id'];
+                $_SESSION['userId'] = $result['id'];
+
+            }
+            else{
+
+                $_SESSION['userId'] = $result['id'];
+
+            }
+
+            header('Location: index.php?pages=loginOk');
+            exit;
+
         }
     }
 

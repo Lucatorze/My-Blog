@@ -4,11 +4,12 @@ class comments{
 
     function addComments($pdo, $date){
 
-        $stmt = $pdo->prepare("INSERT INTO comments(author, content, date, idArticles) VALUE (?,?,?,?)");
+        $stmt = $pdo->prepare("INSERT INTO comments(author, idAuthor, content, date, idArticles) VALUE (?,?,?,?,?)");
         $stmt->bindParam(1, $_POST['author']);
-        $stmt->bindParam(2, $_POST['content']);
-        $stmt->bindParam(3, $date);
-        $stmt->bindParam(4, $_POST['idArticles']);
+        $stmt->bindParam(2, $_POST['idAuthor']);
+        $stmt->bindParam(3, $_POST['content']);
+        $stmt->bindParam(4, $date);
+        $stmt->bindParam(5, $_POST['idArticles']);
         $stmt->execute();
 
 
@@ -16,8 +17,9 @@ class comments{
 
     function updateComments($pdo, $date){
 
-        $stmt = $pdo->prepare("UPDATE articles SET author = :author, content = :content, date = :date, idArticles = :idArticles WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE articles SET author = :author, idAuthor = :idAuthor, content = :content, date = :date, idArticles = :idArticles WHERE id = :id");
         $stmt->bindParam("author", $_POST['author']);
+        $stmt->bindParam("idAuthor", $_POST['idAuthor']);
         $stmt->bindParam("content", $_POST['content']);
         $stmt->bindParam("date", $date);
         $stmt->bindParam("idArticles", $_POST['idArticles']);
