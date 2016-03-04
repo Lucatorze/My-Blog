@@ -12,21 +12,21 @@ require_once('controller/categoriesController.php');
     ?>
 
 
-    <form action="index.php?pages=listArticles" method="post">
+    <form class="addForm" action="index.php?pages=listArticles" method="post">
 
-        <label for="title">Titre :</label>
-        <input type="text" name="title" id="title" value="<?php echo $result['title']; ?>"><br>
+        <label class="addForm" for="title">Titre :</label>
+        <input class="addForm" type="text" name="title" id="title" value="<?php echo $result['title']; ?>"><br>
         <br>
 
-        <label for="author">Auteur :</label>
-        <input type="text" name="author" id="author" value="<?php echo $result['author']; ?>"><br>
+        <label class="addForm" for="author">Auteur :</label>
+        <input class="addForm" type="text" name="author" id="author" value="<?php echo $result['author']; ?>"><br>
         <br>
 
-        <label for="content">Contenu :</label>
-        <textarea name="content" id="content" cols="40" rows="10"><?php echo $result['content']; ?></textarea><br>
+        <label class="addForm" for="content">Contenu :</label><br>
+        <textarea class="addForm" name="content" id="content" cols="40" rows="10"><?php echo $result['content']; ?></textarea><br>
 
-        <label for="idCat">Catégories : </label>
-        <select name="idCat" id="idCat">
+        <label class="addForm" for="idCat">Catégories : </label>
+        <select class="addForm" name="idCat" id="idCat">
 
             <?php
 
@@ -38,12 +38,12 @@ require_once('controller/categoriesController.php');
 
             ?>
 
-        </select>
+        </select><br>
 
         <input type="hidden" name="idAuthor" value="<?php echo $_SESSION['userId']; ?>">
         <input type="hidden" name="idArticles" value="<?php echo $result['id']; ?>">
 
-        <input type="submit" value="Envoyer">
+        <input class="addForm" type="submit" value="Envoyer">
 
         </p>
     </form>

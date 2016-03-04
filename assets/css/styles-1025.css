@@ -1,4 +1,4 @@
-@media (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
     main {
         font-size : 450%;
     }
@@ -41,4 +41,151 @@
         margin-bottom : 40px;
         width : 68px;
     }
+
+    /*************************************************************/
+    /*                          Menu                              /
+    /*************************************************************/
+
+    .header li a {
+        display: block;
+        padding: 20px 30px;
+        border-right: 1px solid #f4f4f4;
+        text-decoration: none;
+        font-size: 55%;
+        color: white;
+        text-align: center;
+    }
+
+    .header li {
+        float: left;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+
+    /*************************************************************/
+    /*                          Article                           /
+    /*************************************************************/
+
+
+    .article h2{
+
+        font-size: 65%;
+
+    }
+
+    .articleContent{
+        font-size: 55%;
+    }
+
+    .author{
+
+        font-size: 40%;
+    }
+
+    /*********************** View Article ************************/
+
+    .titleArticle{
+
+        font-size: 65%;
+
+    }
+
+    .viewArticleContent{
+
+        font-size: 55%;
+
+    }
+
+    .linkViewArticle{
+
+        font-size: 50%;
+    }
+
+    /*********************** Commentaires ************************/
+
+    .comment{
+
+        padding: 5px;
+
+    }
+
+    .commentContent{
+
+        font-size: 55%;
+
+    }
+
+    .dateComm{
+
+        font-size: 40%;
+
+    }
+
+    /*******************commentForm ******************************/
+
+    .commentForm label{
+
+        font-size: 60%;
+    }
+
+    .commentForm input[type="text"]{
+        width: 40%;
+        font-size : 50%;
+        height: 8%;
+    }
+
+
+    .commentForm input[type="submit"]{
+        width: 30%;
+        font-size: 65%;
+    }
+
+    /*******************addForm ******************************/
+
+    .addForm label{
+
+        font-size: 60%;
+
+    }
+
+    .addForm input[type="text"]{
+        width: 40%;
+        font-size : 50%;
+        height: 8%;
+    }
+
+
+    .addForm input[type="submit"]{
+        width: 30%;
+        font-size: 65%;
+    }
+
+    .addForm select{
+        width: 12%;
+        font-size: 50%;
+    }
+
+    /*************************************************************/
+    /*                          Categorie                         /
+    /*************************************************************/
+
+    .categories th{
+
+        font-size: 65%;
+
+    }
+
+    .categories td{
+
+        font-size: 50%;
+        margin-bottom: 3%;
+
+    }
+
 }

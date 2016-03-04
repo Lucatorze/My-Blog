@@ -6,7 +6,7 @@
 
         <tr class="categories">
 
-            <th class="categories" colspan="3">Liste des différents articles<hr></th>
+            <th class="categories" colspan="2">Liste des différents articles<hr></th>
 
         </tr>
         <?php foreach($getArticlesCategories as $result):
@@ -17,8 +17,7 @@
 
             <tr class="categories">
 
-                <td class="categories"><?php echo '<a href="index.php?pages=viewArticles&&id=' . $result['id'] . '">' . $result['title'] . '</a>'; ?></td>
-                <td class="categories"><?php echo $result['author']; ?></td>
+                <td class="categories"><?php echo '<a href="index.php?pages=viewArticles&&id=' . $result['id'] . '">' . $result['title'] . '</a>'; ?> par <?php echo $result['author']; ?></td>
                 <td class="categories"><?php echo $content; ?> ...<hr></td>
 
             </tr>

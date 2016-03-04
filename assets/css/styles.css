@@ -1,3 +1,10 @@
+header{
+    width:100%;
+    background:#303030;
+    height:90px;
+    line-height:50px;
+}
+
 main{
     width: 100%;
     line-height: 1.5;
@@ -18,7 +25,6 @@ body{
 img{
     max-width: 100%;
     height: auto;
-    display: block;
     margin: 0 auto;
     margin-bottom: -20px;
 }
@@ -172,10 +178,111 @@ section{
     padding: 5%;
 
 }
+/*************************************************************/
+/*                          Menu                              /
+/*************************************************************/
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #303030;
+    position: relative;
+    z-index: 10000;
+}
+
+.header li a {
+    display: block;
+    padding: 2%;
+    text-decoration: none;
+    font-size: 80%;
+    color: white;
+    text-align: center;
+}
+
+.header li a :hover,
+.header .menu-btn:hover {
+    background-color: #f4f4f4;
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    top: 15%;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 4px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 36px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 10px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -10px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 260px;
+    position: relative;
+    z-index: 10000;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+
 
 /*************************************************************/
 /*                          Article                           /
 /*************************************************************/
+
+
 
 .articleConteneur{
 
@@ -347,10 +454,61 @@ section{
     font-size: 90%;
     text-decoration: none;
 }
+
 .commentForm input[type="submit"]:hover {
     background: #615d61 linear-gradient(to bottom, #615d61, #050505);
     transition : 0.8s;
 }
+
+/*******************addForm ******************************/
+
+.addForm form{
+    text-align: center;
+    color : black;
+    font-family: 'roboto',sans-serif;
+}
+
+.addForm label{
+
+    font-weight: bold;
+    font-size: 80%;
+    text-align: center;
+}
+
+.addForm input[type="text"]{
+    display: block;
+    margin: 5% auto 0 auto;
+    border-radius: 5px;
+    width: 75%;
+    border: none;
+    font-size : 70%;
+    background-color : #bdc3c7;
+    text-align: center;
+    box-shadow: 1px 2px 2px 1px #656565;
+}
+
+
+.addForm input[type="submit"]{
+    width: 65%;
+    border-radius: 10px;
+    border: none;
+    background: #496a80 linear-gradient(to bottom, #496a80, #363a3d);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0 3px 3px #0f0d0f;
+    -moz-box-shadow: 0 3px 3px #0f0d0f;
+    box-shadow: 0 3px 3px #0f0d0f;
+    font-family: 'Roboto',sans-serif;
+    color: #ffffff;
+    font-size: 90%;
+    text-decoration: none;
+}
+
+.addForm input[type="submit"]:hover {
+    background: #615d61 linear-gradient(to bottom, #615d61, #050505);
+    transition : 0.8s;
+}
+
 
 /*************************************************************/
 /*                          Categorie                         /

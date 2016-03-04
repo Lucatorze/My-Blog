@@ -41,7 +41,7 @@ require_once('controller/commentsController.php');
             <input class="commentForm" type="text" name="author" id="author" value="<?php echo $result['author']; ?>"><br>
             <br>
 
-            <label class="commentForm" for="content">Description :</label>
+            <label class="commentForm" for="content">Description :</label><br>
             <textarea class="commentForm" name="content" id="content" cols="40" rows="10"><?php echo $result['content']; ?></textarea><br>
 
             <input class="commentForm" type="hidden" name="idAuthor" value="<?php echo $_SESSION['userId']; ?>">

@@ -1,4 +1,4 @@
-@media (min-width: 641px) {
+@media screen and (min-width: 641px) {
     main {
         font-size : 300%;
     }
@@ -16,5 +16,162 @@
     }
     .blocInfoPofile{
         height: 635px;
+    }
+
+    /*************************************************************/
+    /*                          Menu                              /
+    /*************************************************************/
+
+    .header li a {
+        display: block;
+        padding: 20px 30px;
+        border-right: 1px solid #f4f4f4;
+        text-decoration: none;
+        font-size: 65%;
+        color: white;
+        text-align: center;
+    }
+
+    .header li {
+        float: left;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+
+
+    /*************************************************************/
+    /*                          Article                           /
+    /*************************************************************/
+
+    .articleConteneur{
+
+        padding: 5px;
+
+    }
+
+    .article h2{
+
+        font-size: 100%;
+
+    }
+
+    .articleContent{
+        font-size: 75%;
+    }
+
+    .author{
+
+        font-size: 60%;
+    }
+
+    /*********************** View Article ************************/
+
+    .titleArticle{
+
+        font-size: 100%;
+
+    }
+
+    .viewArticleConteneur{
+
+        padding: 5px;
+
+    }
+
+    .viewArticleContent{
+
+        font-size: 75%;
+
+    }
+
+    .linkViewArticle{
+
+        font-size: 65%;
+        margin-right: 5%;
+    }
+
+    /*********************** Commentaires ************************/
+
+    .comment{
+
+        padding: 5px;
+
+    }
+
+    .commentContent{
+
+        font-size: 75%;
+
+    }
+
+    .dateComm{
+
+        font-size: 60%;
+
+    }
+
+    /*******************commentForm ******************************/
+
+    .commentForm label{
+
+        font-size: 90%;
+    }
+
+    .commentForm input[type="text"]{
+        width: 50%;
+        font-size : 80%;
+    }
+
+
+    .commentForm input[type="submit"]{
+        width: 45%;
+        font-size: 100%;
+    }
+
+    /*******************addForm ******************************/
+
+    .addForm label{
+
+        font-size: 90%;
+
+    }
+
+    .addForm input[type="text"]{
+        width: 50%;
+        font-size : 80%;
+    }
+
+
+    .addForm input[type="submit"]{
+        width: 45%;
+        font-size: 100%;
+    }
+
+    .addForm select{
+        width: 15%;
+        font-size: 60%;
+    }
+
+    /*************************************************************/
+    /*                          Categorie                         /
+    /*************************************************************/
+
+    .categories th{
+
+        font-size: 100%;
+
+    }
+
+    .categories td{
+
+        font-size: 70%;
+        margin-bottom: 5%;
+
     }
 }

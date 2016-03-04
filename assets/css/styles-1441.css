@@ -1,4 +1,124 @@
-@media (min-width: 1441px) {
+@media screen and (min-width: 1441px) {
 
+    /*************************************************************/
+    /*                          Menu                              /
+    /*************************************************************/
+
+    .header li a {
+        display: block;
+        padding: 20px 30px;
+        border-right: 1px solid #f4f4f4;
+        text-decoration: none;
+        font-size: 50%;
+        color: white;
+        text-align: center;
+    }
+
+    .header li {
+        float: left;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+
+    /*************************************************************/
+    /*                          Article                           /
+    /*************************************************************/
+
+
+    .article h2{
+
+        font-size: 62%;
+
+    }
+
+    .articleContent{
+        font-size: 52%;
+    }
+
+    .author{
+
+        font-size: 38%;
+    }
+
+    /*********************** View Article ************************/
+
+    .titleArticle{
+
+        font-size: 62%;
+
+    }
+
+    .viewArticleContent{
+
+        font-size: 52%;
+
+    }
+
+    .linkViewArticle{
+
+        font-size: 48%;
+    }
+
+    /*********************** Commentaires ************************/
+
+    .comment{
+
+        padding: 5px;
+
+    }
+
+    .commentContent{
+
+        font-size: 52%;
+
+    }
+
+    .dateComm{
+
+        font-size: 38%;
+
+    }
+
+    /*******************commentForm ******************************/
+
+    .commentForm label{
+
+        font-size: 58%;
+    }
+
+    .commentForm input[type="text"]{
+        width: 38%;
+        font-size : 48%;
+        height: 6%;
+    }
+
+
+    .commentForm input[type="submit"]{
+        width: 28%;
+        font-size: 62%;
+    }
+
+    /*************************************************************/
+    /*                          Categorie                         /
+    /*************************************************************/
+
+    .categories th{
+
+        font-size: 62%;
+
+    }
+
+    .categories td{
+
+        font-size: 48%;
+        margin-bottom: 2%;
+
+    }
 
 }
