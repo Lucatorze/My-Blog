@@ -2,7 +2,7 @@
 
 <section>
 
-    <form id="registerForm" method="POST" action="index.php?pages=register"><!-- action="index.php?pages=register"----> <!-- AJAX -->
+    <form id="registerForm" method="POST"  action="index.php?pages=register" ><!-- action="index.php?pages=register"----> <!-- AJAX -->
         <fieldset class="contenairForm">
             <label for="firstname">Prénom</label>
             <input type="text" name="firstname" id="firstname" placeholder="Prénom"><br><br>
@@ -29,6 +29,7 @@
         <div id="blocSuccess"></div>
         <div id="blocError"></div>
     </div>
+    <!-- <script src="./assets/js/registerAjax.js"></script> -->
     <script>
         $(function () {
             $(':text[name="firstname"]').focus();

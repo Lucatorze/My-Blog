@@ -3,11 +3,11 @@
 <section id="loginSection">
     <div class="contenairLogin">
         <form id="loginForm" name="loginForm" method="post" action="index.php?pages=login">
-            <label for"nickname">Pseudo</label>
+            <label for="nickname">Pseudo</label>
             <input type="text" name="nickname" id="nickname" placeholder="xX-Kikoo-xX"><br>
             <br>
 
-            <label for"password">Mot de passe</label>
+            <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password"><br>
             <br>
 
@@ -15,7 +15,7 @@
         </form>
         <div class="contenairLoginResult">
             <div class="nicknameInvalide">
-                <?php echo $nicknameInvalide ?>
+
             </div>
             <div class="passwordInvalide">
                 <?php echo $passwordInvalide ?>
@@ -26,6 +26,7 @@
         </div>
 
     </div>
+    <!-- <script src="./assets/js/loginAjax.js"></script> AJAX -->
     <script>
         $(function () {
             $('#nickname').focus();
