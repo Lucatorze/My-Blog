@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>StrangeAnimals42</title>
     <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0" />
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/default.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/stylesNav.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
@@ -16,9 +17,10 @@
     <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
     <script src="./assets/js/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
-    <!--<script src="./assets/js/plugIn_perso.js"></script>-->
+    <script src="./assets/js/plugIn_perso.js">
     <script src="./assets/js/plugIn_perso.min.js"></script>
     <script src="./assets/js/elevator.js" ></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 </head>
 <body>

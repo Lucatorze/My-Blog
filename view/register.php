@@ -27,7 +27,7 @@
     </form>
     <div class="contenairResult">
         <div id="blocSuccess"></div>
-        <div id="blocError"><?php echo $error; ?></div>
+        <div id="blocError"></div>
     </div>
     <!-- <script src="./assets/js/registerAjax.js"></script> -->
     <script>

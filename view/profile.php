@@ -35,11 +35,10 @@ require_once('controller/profileController.php');
         <input type="text" name="newNickname"><br><br>
         <p>Nouveau email</p>
         <input type="email" name="newEmail"><br><br>
+        <p>Nouveau mot de passe</p>
+        <input type="password" name="newPassword"><br><br>
         <input type="submit" id="btnSubmit" value="Envoyer">
     </form>
-    </div>
-    <div class="refreshEmail">
-        <?php echo $resetNickname?>
     </div>
     <div class="refreshNickname">
         <?php echo $resetEmail?>

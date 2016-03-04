@@ -25,10 +25,8 @@
 
             </div>
             <div class="passwordInvalide">
-                <?php echo $passwordInvalide ?>
             </div>
             <div class="allGood">
-                <?php echo $allGood ?>
             </div>
         </div>
 

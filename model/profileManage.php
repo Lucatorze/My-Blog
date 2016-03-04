@@ -8,10 +8,11 @@ class profile{
         return $result;
     }
     function profileEdit($pdo){
-        $newProfile = $pdo->prepare("UPDATE users SET nickname = :nickname, email = :email WHERE id = :id");
+        $newProfile = $pdo->prepare("UPDATE users SET nickname = :nickname, password = :password, email = :email WHERE id = :id");
         $newProfile->bindParam(':id',$_SESSION['userId']);
         $newProfile->bindParam(':nickname',$_POST['newNickname']);
         $newProfile->bindParam(':email',$_POST['newEmail']);
+        $newProfile->bindParam(':password',$_POST['newPassword']);
         $newProfile->execute();
     }
 }

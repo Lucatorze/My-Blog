@@ -65,7 +65,15 @@ require_once('controller/commentsController.php');
         ?>
 
     </div>
-
+    <div class="viewComment">
+        <img class="imageFlech" src="./assets/img/flech.png" title="voir les commentaires">
+        <img class="imageFlech2" src="./assets/img/flech2.png" title="cacher les commentaires">
+    </div>
+    <script>
+        $(function () {
+            $('.viewComment').tabSlide('imageFlech','imageFlech2','comment');
+        })
+    </script>
     <div>
 
         <?php foreach($getCommentsOrder as $result):?>
