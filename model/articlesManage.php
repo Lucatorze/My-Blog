@@ -4,25 +4,27 @@ class articles{
 
     function addArticles($pdo, $date){
 
-        $stmt = $pdo->prepare("INSERT INTO articles(title, author, content, date, idCat) VALUE (?,?,?,?,?)");
+        $stmt = $pdo->prepare("INSERT INTO articles(title, author, content, date, idCat, idAuthor) VALUE (?,?,?,?,?,?)");
         $stmt->bindParam(1, $_POST['title']);
         $stmt->bindParam(2, $_POST['author']);
         $stmt->bindParam(3, $_POST['content']);
         $stmt->bindParam(4, $date);
         $stmt->bindParam(5, $_POST['idCat']);
+        $stmt->bindParam(6, $_POST['idAuthor']);
         $stmt->execute();
 
     }
 
     function updateArticles($pdo, $date){
 
-        $stmt = $pdo->prepare("UPDATE articles SET title = :title, author = :author, content = :content, date = :date, idCat = :idCat WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE articles SET title = :title, author = :author, content = :content, date = :date, idCat = :idCat, idAuthor = :idAuthor WHERE id = :id");
         $stmt->bindParam("title", $_POST['title']);
         $stmt->bindParam("author", $_POST['author']);
         $stmt->bindParam("content", $_POST['content']);
         $stmt->bindParam("date", $date);
         $stmt->bindParam("idCat", $_POST['idCat']);
         $stmt->bindParam("id", $_POST['idArticles']);
+        $stmt->bindParam("idAuthor", $_POST['idAuthor']);
         $stmt->execute();
 
     }

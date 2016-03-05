@@ -72,6 +72,11 @@
     /*                          Article                           /
     /*************************************************************/
 
+    .articleConteneur{
+
+        width: 60%;
+
+    }
 
     .article h2{
 
@@ -80,7 +85,7 @@
     }
 
     .articleContent{
-        font-size: 55%;
+        font-size: 40%;
     }
 
     .author{
@@ -93,6 +98,13 @@
     .titleArticle{
 
         font-size: 65%;
+
+    }
+
+    .viewArticleConteneur{
+
+        padding: 5px;
+        width: 60%;
 
     }
 
