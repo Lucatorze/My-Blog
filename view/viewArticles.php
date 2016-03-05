@@ -58,7 +58,7 @@ require_once('controller/commentsController.php');
             }else{
         ?>
 
-            Vous devez être connecté pour commenter cet article !
+            <p class="msgNoConnected">Vous devez être connecté pour commenter cet article !</p>
 
         <?php
             }

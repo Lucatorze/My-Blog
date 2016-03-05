@@ -52,6 +52,11 @@ h3{
     margin-top : -45px;
     float:left;
 }
+.msgNoConnected{
+    display: block;
+    padding : 40px;
+    text-align: center;
+}
 
 form{
     text-align: center;
