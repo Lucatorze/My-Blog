@@ -38,11 +38,29 @@
 
 
     };
+    $.fn.tooltipAdd = function(whereAddAttr1,whereAddAttr2,textInfo1,textInfo2){
+        z = 1;
+        var paramTooltip = {
+            whereAddAttr1 : whereAddAttr1,
+            whereAddAttr2 : whereAddAttr2,
+            textInfo1 : textInfo1,
+            textInfo2 : textInfo2
+        };
+
+        $(this).mouseover(function () {
+            z++;
+            if(z % 2 == 0){
+                $('.'+paramTooltip.whereAddAttr1).attr('title',paramTooltip.textInfo1);
+            }else if (z % 2 !=0 ){
+                $('.'+paramTooltip.whereAddAttr2).attr('title',paramTooltip.textInfo2);
+            }
+        });
+    };
 })(jQuery);
 
 /* __________________READ ME __________________*/
 /*
- BEFORE USE  :
+ BEFORE USE  1 PLUG - IN:
 
  * SELECT 1 BUTTON ID OR CLASS to event CLICK
  * DEFINE 2 CONTAINER FOR IMAGE
