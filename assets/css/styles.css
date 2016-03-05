@@ -57,7 +57,9 @@ h3{
     padding : 40px;
     text-align: center;
 }
-
+label{
+     display: inline-block; width: 5em;
+}
 form{
     text-align: center;
     color : #0f0f0f;
