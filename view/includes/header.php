@@ -20,6 +20,9 @@
     <script src="./assets/js/plugIn_perso.js">
     <script src="./assets/js/plugIn_perso.min.js"></script>
     <script src="./assets/js/elevator.js" ></script>
+    <script src="./assets/js/registerScript.php"></script>
+    <script src="./assets/js/viewArticleScript.js"></script>
+    <script src="./assets/js/loginScript.php"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 </head>

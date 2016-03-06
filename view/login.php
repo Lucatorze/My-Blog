@@ -31,19 +31,5 @@
         </div>
 
     </div>
-    <!-- <script src="./assets/js/loginAjax.js"></script> AJAX -->
-    <script>
-        $(function () {
-            $('#nickname').focus();
-            $('input').mouseover(function (){
-                $(this).css({
-                    'backgroundColor' : 'white',
-                    'transition' : '0.8s'
-                });
-            });
-            $('.elevator').css({
-                'display' : 'none'
-            });
-        });
-    </script>
+    <script src="./assets/js/loginScript.js"></script>
 </section>

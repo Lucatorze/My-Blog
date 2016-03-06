@@ -30,15 +30,5 @@
         <div id="blocError"></div>
     </div>
     <!-- <script src="./assets/js/registerAjax.js"></script> -->
-    <script>
-        $(function () {
-            $(':text[name="firstname"]').focus();
-            $('input').mouseover(function () {
-                $(this).css({
-                    'backgroundColor': 'white',
-                    'transition': '0.8s'
-                });
-            });
-        });
-    </script>
+    <script src="./assets/js/registerScript.js"></script>
 </section>
