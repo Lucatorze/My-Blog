@@ -76,6 +76,9 @@ else{
         case 'editUsers':
             require_once('view/editUsers.php');
             break;
+        case 'updateUser':
+            require_once('view/updateUser.php');
+            break;
     }
 }
 

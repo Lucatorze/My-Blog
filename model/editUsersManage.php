@@ -4,7 +4,7 @@ class editUsers{
 
     function getUser($pdo){
 
-        $stmt = $pdo->prepare("SELECT * FROM categories ORDER BY id ASC");
+        $stmt = $pdo->prepare("SELECT * FROM users ORDER BY id ASC");
         $stmt->execute();
         $result = $stmt->fetch();
 
@@ -14,8 +14,8 @@ class editUsers{
 
     function getUserUpdate($pdo){
 
-        $stmt = $pdo->prepare("SELECT * FROM categories WHERE id= :id");
-        $stmt->bindParam("id", $_GET['mod']);
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE id= :id");
+        $stmt->bindParam("id", $_GET['update']);
         $stmt->execute();
         $result = $stmt->fetch();
 
@@ -47,7 +47,7 @@ class editUsers{
         $stmt->bindParam("email", $_POST['email']);
         $stmt->bindParam("password", $_POST['password']);
         $stmt->bindParam("rank", $_POST['rank']);
-        $stmt->bindParam("id", $_GET['mod']);
+        $stmt->bindParam("id", $_GET['update']);
         $stmt->execute();
 
     }

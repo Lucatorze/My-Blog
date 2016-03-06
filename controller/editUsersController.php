@@ -2,19 +2,31 @@
 require_once('model/editUsersManage.php');
 
 $editUsers = new editUsers();
-$userForUpdate = $editUsers->getUserUpdate($pdo);
 $result = $editUsers->getUser($pdo);
+
 $getUserlist = $editUsers->getUserlist($pdo);
 
 $success = '';
+$rank = '';
 
-if (isset($_POST['firstname']) and isset($_POST['lastname']) and isset($_POST['nickname'])  and isset($_POST['email']) and isset($_POST['password']) and isset($_POST['rank'])){
+if (isset($_POST['firstname']) and isset($_POST['lastname'])){
+
+    $_POST['firstname'] = trim(htmlentities($_POST['firstname']));
+    $_POST['lastname'] = trim(htmlentities($_POST['lastname']));
+    $_POST['nickname'] = trim(htmlentities($_POST['nickname']));
+    $_POST['email'] = trim(htmlentities($_POST['email']));
+    $_POST['password'] = trim(htmlentities($_POST['password']));
 
     $editUsers->updateUsers($pdo);
 
-    var_dump($editUsers);
+    header("Location: index.php?pages=editUsers");
+    exit;
 
-    $success = '<div class="success"> Utilisateur modifié avec succès !<br/><a href="gest_member.php" >Retour</a></div>';
+}
+
+if (isset($_GET['update'])) {
+
+    $userForUpdate = $editUsers->getUserUpdate($pdo);
 
 }
 
