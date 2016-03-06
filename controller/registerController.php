@@ -10,7 +10,7 @@ $isFormGood = true;
 $msgOk = '';
 $register = new register();
 
-if(isset($_POST))
+if(isset($_POST['firstname']))
 {
 
     if(!isset($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
@@ -54,9 +54,6 @@ if(isset($_POST))
         $salt = 'zezjaejzeoakzodkozdkozadkoazdoazkdokaodkazodkozakdoazdkoazkdaozdaokdoakzodkazodkaodkazodkoakoladkaodkaodkoakolkoo';
         $_POST['password'] = trim(htmlentities(sha1(sha1($_POST['password']).$salt)));
         unset($_POST['password2']);
-
-
-        echo(json_encode(array('success'=>true, "user"=>$_POST)));
 
         $register->registerUser($pdo,$date);
 

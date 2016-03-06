@@ -10,18 +10,20 @@ require_once('controller/articlesController.php');
 
     ?>
 
-            <form id="loginForm" name="loginForm" method="post" action="index.php?pages=login">
+            <div class="blockConnexion">
 
-                <label for="email">Pseudo</label>
-                <input type="text" name="nickname" id="nickname" placeholder="Pseudo"><br>
-                <br>
+                <form class="addForm" id="loginForm" name="loginForm" method="post" action="index.php?pages=login">
 
-                <label for="pwd">Mot de passe</label>
-                <input type="password" name="password" id="password"><br>
-                <br>
+                    <label class="addForm" for="email">Pseudo</label>
+                    <input class="addForm" type="text" name="nickname" id="nickname" placeholder="Pseudo"><br>
 
-                <input type="submit" name="btnSubmit" value="Envoyer" id="btnSubmit">
-            </form>
+                    <label class="addForm" for="pwd">Mot de passe</label>
+                    <input class="addForm" type="password" name="password" id="password"><br>
+
+                    <input class="addForm" type="submit" name="btnSubmit" value="Envoyer" id="btnSubmit">
+                </form>
+
+            </div>
 
     <?php
 

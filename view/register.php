@@ -20,7 +20,7 @@
             <input type="password" name="password2" id="password2"><br><br>
 
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="sylvain.joly123@gmail.com"><br><br>
+            <input type="email" name="email" id="email" placeholder="E-Mail"><br><br>
 
             <input type="submit" name="btnSubmit" value="Envoyer" id="btnSubmit">
         </fieldset>

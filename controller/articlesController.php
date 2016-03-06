@@ -22,8 +22,19 @@ if (isset($_POST['title']) AND isset($_POST['content'])){
 
         $articles->addArticles($pdo, $date);
 
-        header("Location: index.php?pages=listArticles");
-        exit;
+        if(isset($_SESSION['userId'])){
+
+            header("Location: index.php?pages=articles");
+            exit;
+
+        }
+        else{
+
+            header("Location: index.php?pages=listArticles");
+            exit;
+
+        }
+
 
     }
     else{ //Poster une modification d'articles
@@ -43,8 +54,18 @@ if (isset($_GET['deleteArticles'])){ //Supprimer un article
 
     $articles->deleteArticles($pdo, $date);
 
-    header("Location: index.php?pages=listArticles");
-    exit;
+    if(isset($_SESSION['userId'])){
+
+        header("Location: index.php?pages=articles");
+        exit;
+
+    }
+    else{
+
+        header("Location: index.php?pages=listArticles");
+        exit;
+
+    }
 }
 
 if (isset($_GET['updateArticles']))

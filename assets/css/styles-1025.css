@@ -1,6 +1,6 @@
 @media screen and (min-width: 1025px) {
     main {
-        font-size : 300%;
+        font-size : 450%;
     }
     input{
         width : 450px;
@@ -188,6 +188,15 @@
     .addForm select{
         width: 12%;
         font-size: 50%;
+    }
+
+    /*********************** Bloc Connexion***********************/
+
+    .blockConnexion{
+
+        width: 60%;
+        font-size: 65%;
+
     }
 
     /*************************************************************/
