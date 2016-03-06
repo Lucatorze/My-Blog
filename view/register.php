@@ -2,7 +2,7 @@
 
 <section>
 
-    <form id="registerForm" method="POST" action="index.php?pages=register">
+    <form id="registerForm" method="POST"> <!-- action="index.php?pages=register"-->
         <fieldset class="contenairForm">
             <label for="firstname">Prénom</label>
             <input type="text" name="firstname" id="firstname" placeholder="Prénom"><br><br>
@@ -26,8 +26,7 @@
         </fieldset>
     </form>
     <div class="contenairResult">
-        <div id="blocSuccess"></div>
-        <div id="blocError"></div>
+        <div id="blocSuccess"><?php echo $msgOk; ?></div>
     </div>
     <!-- <script src="./assets/js/registerAjax.js"></script> -->
     <script src="./assets/js/registerScript.js"></script>

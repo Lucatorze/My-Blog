@@ -8,7 +8,7 @@ header{
 main{
     width: 100%;
     line-height: 1.5;
-    font-size: 250%;
+    font-size: 150%;
 }
 ul{
     list-style-type: none;
@@ -161,8 +161,7 @@ form{
 .blocInfoProfile{
     height: auto;
     box-shadow: 0 5px 0 0 #2c3e50;
-    color : #2c3e50;
-    background : whitesmoke;
+    color : royalblue;
     margin-top : 50px;
 }
 #titleProfile{
@@ -178,7 +177,7 @@ form{
 .refreshNickname{
     text-align: center;
     margin-top : 10px;
-    font-size : 100%;
+    font-size : 80%;
 }
 
 section{
