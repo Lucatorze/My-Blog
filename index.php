@@ -73,6 +73,9 @@ else{
         case 'admin':
             require_once('view/admin.php');
             break;
+        case 'editUsers':
+            require_once('view/editUsers.php');
+            break;
     }
 }
 
