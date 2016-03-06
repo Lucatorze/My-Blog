@@ -1,4 +1,3 @@
-
 $(function () {
     $('form').submit(function () {
         $('#blocError').html('');
@@ -9,12 +8,10 @@ $(function () {
             method: 'POST',
             data:$(this).serialize(),
             dataType: 'json',
-
             success: function(data){
                 var toPrint = 'You have successfully subscribed !';
                 $('#blocSuccess').html(toPrint);
             },
-
             error: function(data, status, error) {
                 var toPrint = '';
                 JSON.stringify(data);

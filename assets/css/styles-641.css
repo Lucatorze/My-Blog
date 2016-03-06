@@ -71,6 +71,11 @@
         font-size: 60%;
     }
 
+    .read{
+
+        font-size: 70%;
+    }
+
     /*********************** View Article ************************/
 
     .titleArticle{
@@ -102,6 +107,7 @@
     .comment{
 
         padding: 5px;
+        width: 70%;
 
     }
 
@@ -143,7 +149,7 @@
 
     }
 
-    .addForm input[type="text"]{
+    .addForm input[type="text"], .addForm input[type="password"]{
         width: 50%;
         font-size : 80%;
     }
@@ -175,4 +181,21 @@
         margin-bottom: 5%;
 
     }
+
+    /*************************************************************/
+    /*                       Administration                       /
+    /*************************************************************/
+
+    .listAdmin th{
+
+        font-size: 100%;
+
+    }
+
+    .listAdmin td{
+
+        font-size: 70%;
+    }
+
 }
+

@@ -6,48 +6,48 @@
 
     if(isset($_SESSION['userId']) && isset($_SESSION['admin'])) {
 
-    ?>
+        ?>
+        <div class="blockAdmin">
+            <a class="linkAdmin" class="linkAdmin" href="index.php?pages=admin">Administration</a><br>
+            <a class="linkAdmin" href="index.php?pages=newCategories">Ajouter une categorie</a>
 
-    <a href="index.php?pages=admin">Administration</a><br>
-    <a href="index.php?pages=newCategories">Ajouter une categorie</a>
+            <table class="listAdmin">
 
-    <table>
+                <tr class="listAdmin">
 
-        <tr>
+                    <th class="listAdmin">Action</th>
+                    <th class="listAdmin">Titre</th>
 
-            <th>Action</th>
-            <th>Titre</th>
+                </tr>
+                <?php foreach($getCategoriesId as $result):?>
 
-        </tr>
-        <?php foreach($getCategoriesId as $result):?>
+                    <tr class="listAdmin">
 
-            <tr>
+                        <td class="listAdmin">
+                            <?php echo '<a href="index.php?pages=newCategories&&updateCategories=' . $result['id'] . '">'; ?>Modifier</a>
+                            <br>
+                            <?php echo '<a href="index.php?pages=listCategories&&deleteCategories=' . $result['id'] . '">'; ?>Supprimer</a>
+                        </td>
+                        <td class="listAdmin">
+                            <?php echo '<a href="index.php?pages=viewCategories&&id='.$result['id'].'">'.$result['name'].'</a>'; ?>
+                        </td>
 
-                <td>
-                    <?php echo '<a href="index.php?pages=newCategories&&updateCategories=' . $result['id'] . '">'; ?>Modifier</a>
-                    <br>
-                    <?php echo '<a href="index.php?pages=listCategories&&deleteCategories=' . $result['id'] . '">'; ?>Supprimer</a>
-                </td>
-                <td>
-                    <?php echo '<a href="index.php?pages=viewCategories&&id='.$result['id'].'">'.$result['name'].'</a>'; ?>
-                </td>
+                    </tr>
 
-            </tr>
+                <?php endforeach;?>
+            </table>
+        </div>
+        <?php
 
-        <?php endforeach;?>
-    </table>
+    }else {
 
-    <?php
-
-        }else {
-
-    ?>
+        ?>
 
         Vous devez être connecté en tant qu'administrateur pour accéder à cet page !
 
-    <?php
+        <?php
 
-        }
+    }
 
     ?>
 

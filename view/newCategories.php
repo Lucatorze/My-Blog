@@ -1,4 +1,5 @@
 <?php require_once('controller/categoriesController.php'); ?>
+
 <section>
 
     <?php
@@ -7,23 +8,26 @@
 
         ?>
 
-        <div><?php echo $error;?></div>
+        <div class="blockAdmin">
 
-        <form class="addForm" action="index.php?pages=listCategories" method="post">
+            <div><?php echo $error;?></div>
 
-            <label class="addForm" for="name">Titre :</label>
-            <input class="addForm" type="text" name="name" id="name" value="<?php echo $result['name']; ?>"><br>
-            <br>
+            <form class="addForm" action="index.php?pages=listCategories" method="post">
 
-            <label class="addForm" for="description">Description :</label>
-            <textarea class="addForm" name="description" id="description" cols="40" rows="10"><?php echo $result['description']; ?></textarea><br>
+                <label class="addForm" for="name">Titre :</label>
+                <input class="addForm" type="text" name="name" id="name" value="<?php echo $result['name']; ?>"><br>
 
-            <input type="hidden" name="idCategories" value="<?php echo $result['id']; ?>">
+                <label class="addForm" for="description">Description :</label>
+                <textarea class="addForm" name="description" id="description" cols="30" rows="10"><?php echo $result['description']; ?></textarea><br>
 
-            <input class="addForm" type="submit" value="Envoyer">
+                <input type="hidden" name="idCategories" value="<?php echo $result['id']; ?>">
 
-            </p>
-        </form>
+                <input class="addForm" type="submit" value="Envoyer">
+
+                </p>
+            </form>
+
+        </div>
 
         <?php
 

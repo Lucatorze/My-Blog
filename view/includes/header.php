@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0" />
     <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/default.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/stylesNav.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/styles-641.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/styles-1025.css">

@@ -7,48 +7,46 @@
 
     if(isset($_SESSION['userId']) && isset($_SESSION['admin'])) {
 
-    ?>
+        ?>
+        <div class="blockAdmin">
+            <a class="linkAdmin" href="index.php?pages=admin">Administration</a><br>
+            <a class="linkAdmin" href="index.php?pages=newArticles">Ajouter un article</a>
 
-    <a href="index.php?pages=admin">Administration</a><br>
-    <a href="index.php?pages=newArticles">Ajouter un article</a>
+            <table class="listAdmin">
 
-    <table>
+                <tr class="listAdmin">
 
-        <tr>
+                    <th class="listAdmin">Action</th>
+                    <th class="listAdmin">Titre</th>
+                    <th class="listAdmin">Auteur</th>
 
-            <th>Action</th>
-            <th>Titre</th>
-            <th>Auteur</th>
-            <th>Id catégories</th>
+                </tr>
+                <?php foreach($getArticlesOrder as $result):?>
 
-        </tr>
-        <?php foreach($getArticlesOrder as $result):?>
+                    <tr class="listAdmin">
 
-            <tr>
+                        <td class="listAdmin">
+                            <?php echo '<a href="index.php?pages=newArticles&&updateArticles=' . $result['id'] . '">'; ?>Modifier</a><br>
+                            <?php echo '<a href="index.php?pages=listArticles&&deleteArticles=' . $result['id'] . '">'; ?>Supprimer</a>
+                        </td>
+                        <td class="listAdmin"><?php echo $result['title']; ?></td>
+                        <td class="listAdmin"><?php echo $result['author']; ?></td>
 
-                <td>
-                    <?php echo '<a href="index.php?pages=newArticles&&updateArticles=' . $result['id'] . '">'; ?>Modifier</a><br>
-                    <?php echo '<a href="index.php?pages=listArticles&&deleteArticles=' . $result['id'] . '">'; ?>Supprimer</a>
-                </td>
-                <td><?php echo $result['title']; ?></td>
-                <td><?php echo $result['author']; ?></td>
-                <td><?php echo $result['idCat']; ?></td>
+                    </tr>
 
-            </tr>
+                <?php endforeach; ?>
 
-        <?php endforeach; ?>
+            </table>
+        </div>
+        <?php
 
-    </table>
+    }else {
 
-    <?php
-
-        }else {
-
-    ?>
+        ?>
 
         Vous devez être connecté en tant qu'administrateur pour accéder à cet page !
 
-    <?php
+        <?php
 
     }
 

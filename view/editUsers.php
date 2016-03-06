@@ -10,44 +10,42 @@ require_once('controller/editUsersController.php');
 
         ?>
 
-        <div class="usersContent">
+        <div class="blockAdmin">
 
-            <a href="index.php?pages=admin">Administration</a><br>
+            <a class="linkAdmin" href="index.php?pages=admin">Administration</a><br>
 
-                <table width="90%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#ffffff">
+            <table class="listAdmin">
 
-                    <tr>
+                <tr class="listAdmin">
 
-                        <td><strong>Pseudo</strong></td>
-                        <td><strong>Rang</strong></td>
-                        <td><strong>Action</strong></td>
+                    <th class="listAdmin"><strong>Pseudo</strong></th>
+                    <th class="listAdmin"><strong>Rang</strong></th>
+                    <th class="listAdmin"><strong>Action</strong></th>
+
+                </tr>
+
+                <?php foreach($getUserlist as $result):
+                    if($result['rank'] == 2){
+                        $rank = 'Administrateur';
+                    }else{
+                        $rank = 'Membre';
+                    }
+                    ?>
+
+                    <tr class="listAdmin">
+
+                        <td class="listAdmin"><?php echo $result['nickname']; ?></td>
+                        <td class="listAdmin"><?php echo $rank ?></a></td>
+                        <td class="listAdmin"><a href="index.php?pages=updateUser&&update=<?php echo $result['id']; ?>">Modifier</a><br><a href="index.php?pages=editUsers&&del=<?php echo $result['id']; ?>">Effacer</a></td>
 
                     </tr>
 
-                    <?php foreach($getUserlist as $result):
-                        if($result['rank'] == 2){
-                            $rank = 'Administrateur';
-                        }else{
-                            $rank = 'Membre';
-                        }
-                        ?>
-
-                        <tr>
-
-                            <td><?php echo $result['nickname']; ?></td>
-                            <td><?php echo $rank ?></a></td>
-                            <td><a href="index.php?pages=updateUser&&update=<?php echo $result['id']; ?>">Modifier</a><br><a href="index.php?pages=editUsers&&del=<?php echo $result['id']; ?>">Effacer</a></td>
-
-                        </tr>
 
 
+                <?php endforeach;?>
 
-                    <?php endforeach;?>
-
-                </table>
-
+            </table>
         </div>
-
         <?php
     }else {
         ?>

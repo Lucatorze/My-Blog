@@ -9,44 +9,45 @@ require_once('controller/categoriesController.php');
 
     if(isset($_SESSION['userId'])) {
 
-    ?>
+        ?>
 
+        <div class="blockAdmin">
 
-    <form class="addForm" action="index.php?pages=listArticles" method="post">
+            <form class="addForm" action="index.php?pages=listArticles" method="post">
 
-        <label class="addForm" for="title">Titre :</label>
-        <input class="addForm" type="text" name="title" id="title" value="<?php echo $result['title']; ?>"><br>
-        <br>
+                <label class="addForm" for="title">Titre :</label>
+                <input class="addForm" type="text" name="title" id="title" value="<?php echo $result['title']; ?>"><br>
 
-        <label class="addForm" for="author">Auteur :</label>
-        <input class="addForm" type="text" name="author" id="author" value="<?php echo $result['author']; ?>"><br>
-        <br>
+                <label class="addForm" for="author">Auteur :</label>
+                <input class="addForm" type="text" name="author" id="author" value="<?php echo $result['author']; ?>"><br>
 
-        <label class="addForm" for="content">Contenu :</label><br>
-        <textarea class="addForm" name="content" id="content" cols="40" rows="10"><?php echo $result['content']; ?></textarea><br>
+                <label class="addForm" for="content">Contenu :</label><br>
+                <textarea class="addForm" name="content" id="content" cols="40" rows="10"><?php echo $result['content']; ?></textarea><br>
 
-        <label class="addForm" for="idCat">Catégories : </label>
-        <select class="addForm" name="idCat" id="idCat">
+                <label class="addForm" for="idCat">Catégories : </label>
+                <select class="addForm" name="idCat" id="idCat">
 
-            <?php
+                    <?php
 
-            foreach($getCategoriesId as $result2){
+                    foreach($getCategoriesId as $result2){
 
-                echo '<option value="'.$result2['id'].'" name="'.$result2['id'].'">'.$result2['name'].'</option>';
+                        echo '<option value="'.$result2['id'].'" name="'.$result2['id'].'">'.$result2['name'].'</option>';
 
-            }
+                    }
 
-            ?>
+                    ?>
 
-        </select><br>
+                </select><br>
 
-        <input type="hidden" name="idAuthor" value="<?php echo $_SESSION['userId']; ?>">
-        <input type="hidden" name="idArticles" value="<?php echo $result['id']; ?>">
+                <input type="hidden" name="idAuthor" value="<?php echo $_SESSION['userId']; ?>">
+                <input type="hidden" name="idArticles" value="<?php echo $result['id']; ?>">
 
-        <input class="addForm" type="submit" value="Envoyer">
+                <input class="addForm" type="submit" value="Envoyer">
 
-        </p>
-    </form>
+                </p>
+            </form>
+
+        </div>
 
         <?php
 

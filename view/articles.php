@@ -44,6 +44,7 @@ require_once('controller/articlesController.php');
                 <div class="articleContent">
                     <?php echo $content; ?>...
                 </div>
+                <div class="read"><?php echo '<a href="index.php?pages=viewArticles&&id=' . $result['id'] . '">Lire la suite ...</a>'; ?></div>
                 <div class="author">par <b><?php echo $result['author']; ?></b><br> le <?php echo date('d/m/Y à H\hi', $result['date']); ?></div>
             </div>
         </div>

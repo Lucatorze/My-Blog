@@ -2,7 +2,6 @@
 <?php
 require_once("model/registerManage.php");
 
-
 /* $verif = $register->verif($pdo); */
 
 $date = time();
@@ -43,7 +42,7 @@ if(isset($_POST))
 
     if(!$isFormGood) {
         foreach($errors as $value) {
-                echo  $value."<br>";
+            echo  $value."<br>";
         }
     } else {
         $_POST['email'] = trim(htmlentities($_POST['email']));
@@ -56,13 +55,13 @@ if(isset($_POST))
         $_POST['password'] = trim(htmlentities(sha1(sha1($_POST['password']).$salt)));
         unset($_POST['password2']);
 
-        $register->registerUser($pdo,$date);
 
+        echo(json_encode(array('success'=>true, "user"=>$_POST)));
+
+        $register->registerUser($pdo,$date);
 
         header('Location: index.php?pages=registerOk');
         exit;
-
-
 
     }
 } else {
