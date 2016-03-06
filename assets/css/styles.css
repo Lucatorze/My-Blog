@@ -76,7 +76,6 @@ input{
     font-size : 80%;
     color : black;
     background-color : #bdc3c7;
-    box-shadow: 1px 2px 2px 1px #656565;
 }
 ::-webkit-input-placeholder {
     color:white;

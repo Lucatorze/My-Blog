@@ -116,7 +116,6 @@ select {
     vertical-align: middle;
 }
 
-input[type="radio"],
 input[type="checkbox"] {
     margin: 0;
     vertical-align: text-bottom;

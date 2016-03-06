@@ -2,7 +2,7 @@
     main {
         font-size : 450%;
     }
-    input{
+    input[type="text"],input[type="email"], input[type="submit"] {
         width : 450px;
         height : 50px;
         font-size : 25px;
